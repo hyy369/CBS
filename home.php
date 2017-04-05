@@ -16,7 +16,7 @@
     <li><a href="assets/CBS_STAGE_1.pdf">Stage 1 (PDF)</a></li>
     <li><a href="assets/CBS_STAGE_2.pdf">Stage 2 (PDF)</a></li>
   </ul>
-  <h1>CBS - Classroom Booking System</h1>
+  <h1>CBS: Search classroom facilities</h1>
   <form action="search_room.php" method="post">
     <select  name="room">
       <?php
