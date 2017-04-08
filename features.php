@@ -114,7 +114,7 @@
             if ($_POST["min_cap"] > 0) {
               $sql .= " AND capacity >= ".$_POST["min_cap"];
             }
-
+            echo "<tr><td>".$sql."</td></tr>";
             $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
