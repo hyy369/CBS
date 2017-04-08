@@ -43,29 +43,6 @@
 
   <div class="container">
 
-    <div class="row"> <!--old search dropdown-->
-      <form action="search_room.php" method="post">
-        <select  name="room">
-          <?php
-          // Performing SQL query
-          $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
-          or die('Could not connect:' . pg_last_error());
-          $query = "SELECT room_id FROM rooms";
-          $result = pg_query($query) or die('Query failed: ' . pg_last_error());
-
-          while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
-            echo '<option value="';
-            echo $line[0];
-            echo '">';
-            echo $line[0];
-            echo '</option>\n';
-          }
-          ?>
-        </select>
-        <INPUT TYPE="submit" name="submit" />
-      </form>
-    </div>
-
     <div class="row">
       <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Search for rooms..">
 
