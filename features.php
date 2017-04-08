@@ -85,34 +85,34 @@
 
             //filter projectors
             if ($_POST["projector"] == "true") {
-              sql .= "projector == 'YES'";
+              $sql .= "projector == 'YES'";
             } else {
               // prepare sql with "AND" for further filters
-              sql .= "projector == 'YES' OR projector == 'NO'";
+              $sql .= "projector == 'YES' OR projector == 'NO'";
             }
             //filter boards
             if ($_POST["chalkboard"] == "true") {
               if ($_POST["whiteboard"] == "true") {
-                sql .= " AND whiteboard == 'BOTH'";
+                $sql .= " AND whiteboard == 'BOTH'";
               } else {
-                sql .= " AND whiteboard == 'WHITEBOARD'";
+                $sql .= " AND whiteboard == 'WHITEBOARD'";
               }
             } else {
               if ($_POST["whiteboard"] == "true") {
-                sql .= " AND whiteboard == 'CHALKBOARD'";
+                $sql .= " AND whiteboard == 'CHALKBOARD'";
               }
             }
             //filter visualizers
             if ($_POST["visualizer"] == "true") {
-              sql .= " AND visualizer = 'YES'";
+              $sql .= " AND visualizer = 'YES'";
             }
             //filter outlets
             if ($_POST["min_outlets"] > 0) {
-              sql .= " AND outlets >= ".$_POST["min_outlets"];
+              $sql .= " AND outlets >= ".$_POST["min_outlets"];
             }
             //filter capacity
             if ($_POST["min_cap"] > 0) {
-              sql .= " AND capacity >= ".$_POST["min_cap"];
+              $sql .= " AND capacity >= ".$_POST["min_cap"];
             }
 
             $result = pg_query($query) or die('Query failed: ' . pg_last_error());
