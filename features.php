@@ -85,21 +85,21 @@
 
             //filter projectors
             if ($_POST["projector"] == "true") {
-              $sql .= "projector == 'YES'";
+              $sql .= "projector = 'YES'";
             } else {
               // prepare sql with "AND" for further filters
-              $sql .= "projector == 'YES' OR projector == 'NO'";
+              $sql .= "projector = 'YES' OR projector = 'NO'";
             }
             //filter boards
             if ($_POST["chalkboard"] == "true") {
               if ($_POST["whiteboard"] == "true") {
-                $sql .= " AND whiteboard == 'BOTH'";
+                $sql .= " AND whiteboard = 'BOTH'";
               } else {
-                $sql .= " AND whiteboard == 'CHALKBOARD'";
+                $sql .= " AND whiteboard = 'CHALKBOARD'";
               }
             } else {
               if ($_POST["whiteboard"] == "true") {
-                $sql .= " AND whiteboard == 'WHITEBOARD'";
+                $sql .= " AND whiteboard = 'WHITEBOARD'";
               }
             }
             //filter visualizers
