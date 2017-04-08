@@ -95,11 +95,11 @@
               if ($_POST["whiteboard"] == "true") {
                 $sql .= " AND whiteboard == 'BOTH'";
               } else {
-                $sql .= " AND whiteboard == 'WHITEBOARD'";
+                $sql .= " AND whiteboard == 'CHALKBOARD'";
               }
             } else {
               if ($_POST["whiteboard"] == "true") {
-                $sql .= " AND whiteboard == 'CHALKBOARD'";
+                $sql .= " AND whiteboard == 'WHITEBOARD'";
               }
             }
             //filter visualizers
@@ -114,6 +114,7 @@
             if ($_POST["min_cap"] > 0) {
               $sql .= " AND capacity >= ".$_POST["min_cap"];
             }
+            $sql .= ";";
             echo "<tr><td>".$sql."</td></tr>";
             $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
