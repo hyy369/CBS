@@ -71,8 +71,7 @@
 
       <table id="roomTable">
       <tr>
-        <th>Building</th>
-        <th>Room No.</th>
+        <th>Room ID</th>
         <th>Projector</th>
         <th>Board</th>
         <th>Visualizer</th>
@@ -88,8 +87,7 @@
 
       while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
         echo "\t<tr>\n";
-        echo "\t\t<td>$line[1]</td>\n";
-        echo "\t\t<td>$line[2]</td>\n";
+        echo "\t\t<td>$line[0]</td>\n";
         echo "\t\t<td>$line[3]</td>\n";
         echo "\t\t<td>$line[4]</td>\n";
         echo "\t\t<td>$line[5]</td>\n";
