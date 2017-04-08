@@ -6,19 +6,20 @@
   <meta name="Author" content="Yangyang He">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <div class="container">
     <div class="row">
       <table>
       <tr>
-        <td>Building</td>
-        <td>Room No.</td>
-        <td>Projector</td>
-        <td>Board</td>
-        <td>Visualizer</td>
-        <td>Outlets No.</td>
-        <td>Capacity</td>
+        <th>Building</th>
+        <th>Room No.</th>
+        <th>Projector</th>
+        <th>Board</th>
+        <th>Visualizer</th>
+        <th>Outlets No.</th>
+        <th>Capacity</th>
       </tr>
       <?php
       // Performing SQL query
