@@ -113,6 +113,9 @@
             $min_cap = (is_numeric($_POST["min_cap"]) ? (int)$_POST["min_cap"] : 0);
             $sql .= " AND capacity >= ".$min_cap;
             $sql .= ";";
+
+            echo "<tr><td>".$sql."</td></tr>";
+
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
             while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
