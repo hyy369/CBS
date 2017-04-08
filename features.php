@@ -88,7 +88,7 @@
               $sql .= "projector = 'YES'";
             } else {
               // prepare sql with "AND" for further filters
-              $sql .= "projector = 'YES' OR projector = 'NO'";
+              $sql .= "(projector = 'YES' OR projector = 'NO')";
             }
             //filter boards
             if ($_POST["chalkboard"] == "true") {
@@ -116,7 +116,7 @@
             }
             $sql .= ";";
             echo "<tr><td>".$sql."</td></tr>";
-            $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+            $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
             while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
               echo "\t<tr>\n";
