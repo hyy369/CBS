@@ -117,7 +117,7 @@
             $sql .= ";";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
-            while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+            while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
               echo "\t<tr>\n";
               echo "\t\t<td>$line[0]</td>\n";
               echo "\t\t<td>$line[3]</td>\n";
@@ -132,12 +132,11 @@
       </div>
     </div>
   </div>
-</body>
-</html>
-<? php
+</body><? php
 // Free resultset
 pg_free_result($result);
 
 // Closing connection
 pg_close<$dbconn);
 ?>
+</html>
