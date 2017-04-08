@@ -46,14 +46,14 @@
     <div class="container">
       <div class="row">
         <p><strong>Please check the features you would like to have:</strong></p>
-        <form action ="action.php" method="post">
-          <input type="checkbox" name="projector" value="proj_true">
+        <form action ="features.php" method="post">
+          <input type="checkbox" name="projector" value="true">
           <span>Projector</span>
-          <input type="checkbox" name="board" value="chalkboard">
+          <input type="checkbox" name="chalkboard" value="true">
           <span>Chalkboard</span>
-          <input type="checkbox" name="board" value="whiteboard">
+          <input type="checkbox" name="whiteboard" value="true">
           <span>Whiteoard</span>
-          <input type="checkbox" name="visualizer" value="vis_true">
+          <input type="checkbox" name="visualizer" value="true">
           <span>Visualizer</span>
           <br>
           <span>Minimum capacity: </span>
@@ -77,6 +77,57 @@
             <th>Outlets No.</th>
             <th>Capacity</th>
           </tr>
+          <?php
+          // Connecting, selecting database
+          $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+            or die('Could not connect:' . pg_last_error());
+          $sql = "SELECT * FROM rooms WHERE ";
+
+          //filter projectors
+          if ($_POST["projector"] == "true") {
+            sql .= "projector == 'YES'";
+          } else {
+            // prepare sql with "AND" for further filters
+            sql .= "projector == 'YES' OR projector == 'NO'";
+          }
+          //filter boards
+          if ($_POST["chalkboard"] == "true") {
+            if ($_POST["whiteboard"] == "true") {
+              sql .= " AND whiteboard == 'BOTH'";
+            } else {
+              sql .= " AND whiteboard == 'WHITEBOARD'";
+            }
+          } else {
+            if ($_POST["whiteboard"] == "true") {
+              sql .= " AND whiteboard == 'CHALKBOARD'";
+            }
+          }
+          //filter visualizers
+          if ($_POST["visualizer"] == "true") {
+            sql .= " AND visualizer = 'YES'";
+          }
+          //filter outlets
+          if ($_POST["min_outlets"] > 0) {
+            sql .= " AND outlets >= ".$_POST["min_outlets"]
+          }
+          //filter capacity
+          if ($_POST["min_cap"] > 0) {
+            sql .= " AND capacity >= ".$_POST["min_cap"]
+          }
+
+          $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+
+          while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+            echo "\t<tr>\n";
+            echo "\t\t<td>$line[0]</td>\n";
+            echo "\t\t<td>$line[3]</td>\n";
+            echo "\t\t<td>$line[4]</td>\n";
+            echo "\t\t<td>$line[5]</td>\n";
+            echo "\t\t<td>$line[6]</td>\n";
+            echo "\t\t<td>$line[7]</td>\n";
+            echo "\t</tr>\n";
+          }
+          ?>
         </table>
       </div>
     </div>
