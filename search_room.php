@@ -42,7 +42,8 @@
   </div> <!--end Header-->
 
   <div class="container">
-    <div class="row">
+
+    <div class="row"> <!--old search dropdown-->
       <form action="search_room.php" method="post">
         <select  name="room">
           <?php
@@ -64,10 +65,11 @@
         <INPUT TYPE="submit" name="submit" />
       </form>
     </div>
+
     <div class="row">
       <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Search for rooms..">
 
-      <table>
+      <table id="roomTable">
       <tr>
         <th>Building</th>
         <th>Room No.</th>
@@ -101,9 +103,9 @@
 function searchRoom() {
   // Declare variables
   var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
+  input = document.getElementById("roomInput");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
+  table = document.getElementById("roomTable");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
