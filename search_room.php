@@ -40,7 +40,7 @@
       </div>
     </div>
   </div> <!--end Header-->
-  
+
   <div class="container">
     <div class="row">
       <form action="search_room.php" method="post">
@@ -65,6 +65,8 @@
       </form>
     </div>
     <div class="row">
+      <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Search for rooms..">
+
       <table>
       <tr>
         <th>Building</th>
@@ -79,7 +81,7 @@
       // Performing SQL query
       $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
       or die('Could not connect:' . pg_last_error());
-      $query = "SELECT * FROM rooms WHERE room_id='" . $_POST["room"]. "'";
+      $query = "SELECT * FROM rooms";
       $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
       while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
@@ -95,6 +97,28 @@
       }
       ?>
       </table>
+      <script>
+function searchRoom() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
     </div>
   </div>
 </body>
