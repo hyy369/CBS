@@ -34,7 +34,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
             <li><a href="home.html">Home</a></li>
-            <li><a href="search_room.php">Classroom Features</a></li>
+            <li><a href="classrooms.php">Search by Classrooms</a></li>
+            <li><a href="roomFeatures.php">Search by Features</a></li>
             <li><a href="old_search.php">Old Search</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -81,7 +82,7 @@
       // Performing SQL query
       $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
       or die('Could not connect:' . pg_last_error());
-      $query = "SELECT * FROM rooms where room_id='" . $POST_("room") . "'";
+      $query = "SELECT * FROM rooms where room_id='" . $_POST("room") . "'";
       $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
       while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {

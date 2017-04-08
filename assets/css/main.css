@@ -17,7 +17,7 @@ div.header {
 	margin-left: 100px;
 }
 
-input {
+#roomInput {
     background-image: url('/assets/img/searchIcon.png'); /* Add a search icon to input */
     background-repeat: no-repeat; /* Do not repeat the icon image */
     width: 100%; /* Full-width */

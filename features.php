@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>CS421 Database G11 Project "Class Booking Service"</title>
@@ -8,8 +9,8 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-
   <div id="header">
+
     <!--Puts logo into Bootstrap grid so that it properly resizes across devices-->
     <div class="container">
       <div class="row">
@@ -41,22 +42,43 @@
       </div>
     </div>
   </div> <!--end Header-->
+  <div id="body">
+    <div class="container">
+      <div class="row">
+        <p><strong>Please check the features you would like to have:</strong></p>
+        <form action ="action.php" method="post">
+          <input type="checkbox" name="projector" value="proj_true">
+          <span>Projector</span>
+          <input type="checkbox" name="board" value="chalkboard">
+          <span>Chalkboard</span>
+          <input type="checkbox" name="board" value="whiteboard">
+          <span>Whiteoard</span>
+          <input type="checkbox" name="visualizer" value="vis_true">
+          <span>Visualizer</span>
+          <br>
+          <span>Minimum capacity: </span>
+          <input type="text" name="min_outlets">
+          <br>
+          <span>Minimum number of outlets: </span>
+          <input type="text" name="min_cap">
+          <br>
+          <input type="submit" value="Search Rooms">
+          <input type ="reset">
+        </form>
+      </div>
 
-  <div class="container">
-    <div class="row">
-      <h3>Group Members</h3>
-      <ul>
-        <li>Shennie Yao</li>
-        <li>Nicholas Whays (Contact Person)</li>
-        <li>Yangyang He</li>
-      </ul>
-    </div>
-    <div class="row">
-      <h3>Stage Documents</h3>
-      <ul>
-        <li><a href="assets/CBS_STAGE_1.pdf">Stage 1 (PDF)</a></li>
-        <li><a href="assets/CBS_STAGE_2.pdf">Stage 2 (PDF)</a></li>
-      </ul>
+      <div class="row">
+        <table id="roomTable">
+          <tr>
+            <th>Room ID</th>
+            <th>Projector</th>
+            <th>Board</th>
+            <th>Visualizer</th>
+            <th>Outlets No.</th>
+            <th>Capacity</th>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </body>
