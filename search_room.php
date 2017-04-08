@@ -9,6 +9,38 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+  <div id="header">
+
+    <!--Puts logo into Bootstrap grid so that it properly resizes across devices-->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4" id="logo"><a href="home.html"><img src="assets/img/logo.png" alt="Logo"></a></div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+
+    <!-- Static navbar -->
+    <!-- HTML for the navigation bar - will collapse into a dropdown button on small screens-->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="search_room.php">Demo</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div> <!--end Header-->
+  
   <div class="container">
     <div class="row">
       <form action="search_room.php" method="post">
