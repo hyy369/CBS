@@ -78,55 +78,55 @@
             <th>Capacity</th>
           </tr>
           <?php
-          // Connecting, selecting database
-          $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
-            or die('Could not connect:' . pg_last_error());
-          $sql = "SELECT * FROM rooms WHERE ";
+            // Connecting, selecting database
+            $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+              or die('Could not connect:' . pg_last_error());
+            $sql = "SELECT * FROM rooms WHERE ";
 
-          //filter projectors
-          if ($_POST["projector"] == "true") {
-            sql .= "projector == 'YES'";
-          } else {
-            // prepare sql with "AND" for further filters
-            sql .= "projector == 'YES' OR projector == 'NO'";
-          }
-          //filter boards
-          if ($_POST["chalkboard"] == "true") {
-            if ($_POST["whiteboard"] == "true") {
-              sql .= " AND whiteboard == 'BOTH'";
+            //filter projectors
+            if ($_POST["projector"] == "true") {
+              sql .= "projector == 'YES'";
             } else {
-              sql .= " AND whiteboard == 'WHITEBOARD'";
+              // prepare sql with "AND" for further filters
+              sql .= "projector == 'YES' OR projector == 'NO'";
             }
-          } else {
-            if ($_POST["whiteboard"] == "true") {
-              sql .= " AND whiteboard == 'CHALKBOARD'";
+            //filter boards
+            if ($_POST["chalkboard"] == "true") {
+              if ($_POST["whiteboard"] == "true") {
+                sql .= " AND whiteboard == 'BOTH'";
+              } else {
+                sql .= " AND whiteboard == 'WHITEBOARD'";
+              }
+            } else {
+              if ($_POST["whiteboard"] == "true") {
+                sql .= " AND whiteboard == 'CHALKBOARD'";
+              }
             }
-          }
-          //filter visualizers
-          if ($_POST["visualizer"] == "true") {
-            sql .= " AND visualizer = 'YES'";
-          }
-          //filter outlets
-          if ($_POST["min_outlets"] > 0) {
-            sql .= " AND outlets >= ".$_POST["min_outlets"]
-          }
-          //filter capacity
-          if ($_POST["min_cap"] > 0) {
-            sql .= " AND capacity >= ".$_POST["min_cap"]
-          }
+            //filter visualizers
+            if ($_POST["visualizer"] == "true") {
+              sql .= " AND visualizer = 'YES'";
+            }
+            //filter outlets
+            if ($_POST["min_outlets"] > 0) {
+              sql .= " AND outlets >= ".$_POST["min_outlets"];
+            }
+            //filter capacity
+            if ($_POST["min_cap"] > 0) {
+              sql .= " AND capacity >= ".$_POST["min_cap"];
+            }
 
-          $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+            $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-          while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-            echo "\t<tr>\n";
-            echo "\t\t<td>$line[0]</td>\n";
-            echo "\t\t<td>$line[3]</td>\n";
-            echo "\t\t<td>$line[4]</td>\n";
-            echo "\t\t<td>$line[5]</td>\n";
-            echo "\t\t<td>$line[6]</td>\n";
-            echo "\t\t<td>$line[7]</td>\n";
-            echo "\t</tr>\n";
-          }
+            while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+              echo "\t<tr>\n";
+              echo "\t\t<td>$line[0]</td>\n";
+              echo "\t\t<td>$line[3]</td>\n";
+              echo "\t\t<td>$line[4]</td>\n";
+              echo "\t\t<td>$line[5]</td>\n";
+              echo "\t\t<td>$line[6]</td>\n";
+              echo "\t\t<td>$line[7]</td>\n";
+              echo "\t</tr>\n";
+            }
           ?>
         </table>
       </div>
@@ -134,3 +134,10 @@
   </div>
 </body>
 </html>
+<? php
+// Free resultset
+pg_free_result($result);
+
+// Closing connection
+pg_close<$dbconn);
+?>
