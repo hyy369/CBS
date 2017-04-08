@@ -33,6 +33,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
+            <li><a href="home.html">Home</a></li>
             <li><a href="search_room.php">Classroom Features</a></li>
             <li><a href="old_search.php">Old Search</a></li>
           </ul>
@@ -44,7 +45,7 @@
   <div class="container">
 
     <div class="row"> <!--old search dropdown-->
-      <form action="search_room.php" method="post">
+      <form action="old_search.php" method="post">
         <select  name="room">
           <?php
           // Performing SQL query

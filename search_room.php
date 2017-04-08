@@ -33,6 +33,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
+            <li><a href="home.html">Home</a></li>
             <li><a href="search_room.php">Classroom Features</a></li>
             <li><a href="old_search.php">Old Search</a></li>
           </ul>
