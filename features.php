@@ -52,14 +52,14 @@
           <input type="checkbox" name="chalkboard" value="true">
           <span>Chalkboard</span>
           <input type="checkbox" name="whiteboard" value="true">
-          <span>Whiteoard</span>
+          <span>Whiteboard</span>
           <input type="checkbox" name="visualizer" value="true">
           <span>Visualizer</span>
           <br>
-          <span>Minimum capacity: </span>
+          <span>Minimum number of outlets: </span>
           <input type="text" name="min_outlets">
           <br>
-          <span>Minimum number of outlets: </span>
+          <span>Minimum capacity: </span>
           <input type="text" name="min_cap">
           <br>
           <input type="submit" value="Search Rooms">
