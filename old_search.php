@@ -35,8 +35,7 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a href="home.html">Home</a></li>
             <li><a href="classrooms.php">Search by Classrooms</a></li>
-            <li><a href="roomFeatures.php">Search by Features</a></li>
-            <li><a href="old_search.php">Old Search</a></li>
+            <li><a href="features.php">Search by Features</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
