@@ -107,13 +107,11 @@
               $sql .= " AND visualizer = 'YES'";
             }
             //filter outlets
-            if ($_POST["min_outlets"] > 0) {
-              $sql .= " AND outlets >= ".$_POST["min_outlets"];
-            }
+            $min_outlets = (is_numeric($_POST["min_outlets"]) ? (int)$_POST["min_outlets"] : 0);
+            $sql .= " AND outlets >= ".$min_outlets;
             //filter capacity
-            if ($_POST["min_cap"] > 0) {
-              $sql .= " AND capacity >= ".$_POST["min_cap"];
-            }
+            $min_cap = (is_numeric($_POST["min_cap"]) ? (int)$_POST["min_cap"] : 0);
+            $sql .= " AND outlets >= ".$cap;
             $sql .= ";";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
