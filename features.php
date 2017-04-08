@@ -56,10 +56,10 @@
           <span>Visualizer</span>
           <br>
           <span>Minimum number of outlets: </span>
-          <input type="text" name="min_outlets">
+          <input type="number" name="min_outlets" min="0">
           <br>
           <span>Minimum capacity: </span>
-          <input type="text" name="min_cap">
+          <input type="number" name="min_cap" min="0">
           <br>
           <input type="submit" value="Search Rooms">
           <input type ="reset">
