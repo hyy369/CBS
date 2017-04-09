@@ -46,7 +46,7 @@
       <div class="row">
         <p><strong>Please check the features you would like to have:</strong></p>
         <form action ="features.php" method="post">
-          <table id="features">
+          <table id="feature-filters">
             <tr>
               <td><input type="checkbox" name="projector" value="true"></td>
               <td><span>Projector</span></td>

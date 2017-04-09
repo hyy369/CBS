@@ -34,6 +34,13 @@ div.header {
     font-size: 18px; /* Increase font-size */
 }
 
+#feature-filters {
+	text-align: left;
+	width: auto;
+	border: 0px;
+	font-size: 12px;
+}
+
 
 th,td {
     text-align: left; /* Left-align text */
