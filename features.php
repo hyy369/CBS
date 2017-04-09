@@ -46,23 +46,29 @@
       <div class="row">
         <p><strong>Please check the features you would like to have:</strong></p>
         <form action ="features.php" method="post">
-          <input type="checkbox" name="projector" value="true">
-          <span>Projector</span>
-          <input type="checkbox" name="chalkboard" value="true">
-          <span>Chalkboard</span>
-          <input type="checkbox" name="whiteboard" value="true">
-          <span>Whiteboard</span>
-          <input type="checkbox" name="visualizer" value="true">
-          <span>Visualizer</span>
-          <br>
-          <span>Minimum number of outlets: </span>
-          <input type="number" name="min_outlets" min="0">
-          <br>
-          <span>Minimum capacity: </span>
-          <input type="number" name="min_cap" min="0">
-          <br>
-          <input type="submit" value="Search Rooms">
-          <input type ="reset">
+          <table id="features">
+            <tr>
+              <td><input type="checkbox" name="projector" value="true"></td>
+              <td><span>Projector</span></td>
+              <td><input type="checkbox" name="chalkboard" value="true"></td>
+              <td><span>Chalkboard</span></td>
+              <td><input type="checkbox" name="whiteboard" value="true"></td>
+              <td><span>Whiteboard</span></td>
+              <td><input type="checkbox" name="visualizer" value="true"></td>
+              <td><span>Visualizer</span></td>
+            </tr>
+            <tr>
+              <td colspan="4"><span>Minimum number of outlets: </span></td>
+              <td colspan="4"><input type="number" name="min_outlets" min="0"></td>
+            </tr>
+            <tr>
+              <td colspan="4"><span>Minimum capacity: </span></td>
+              <td colspan="4"><input type="number" name="min_cap" min="0"></td>
+            </tr>
+            <tr>
+              <td colspan="4"><input type="submit" value="Search Rooms"></td>
+              <td colspan="4"><input type ="reset"></td>
+          </table>
         </form>
       </div>
 
