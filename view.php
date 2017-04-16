@@ -72,9 +72,6 @@
             <th>19:30</th>
             <th>20:00</th>
             <th>20:30</th>
-            <th>21:00</th>
-            <th>21:30</th>
-            <th>22:00</th>
           </tr>
           <?php
             // Connecting, selecting database
@@ -84,11 +81,16 @@
             $sql .= $_GET["room"];
             $sql .= "' AND (date >= '2017-04-17' AND date <= '2017-04-21') ORDER BY date, time;";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-
+            $count = 0;
             while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
-              echo "\t<tr>\n";
+              if ($count % 26 == 0) {
+                echo "\t<tr>\n";
+              }
               echo "\t\t<td>$line[0]</td>\n";
-              echo "\t</tr>\n";
+              $count += 1;
+              if ($count % 26 == 0) {
+                echo "\t</tr>\n";
+              }
             }
           ?>
         </table>
