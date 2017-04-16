@@ -118,6 +118,7 @@
               }
             ?>
           </table>
+          <input type="submit" value="Request these time slots">
         </form>
       </div>
 
