@@ -148,7 +148,7 @@
         $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
          or die('Could not connect:' . pg_last_error());
         $sql = "";
-        echo "<p>You booked $room on $date $time.</p>"
+        echo "<p>You booked $room on $date $time.</p>";
       ?>
       </div>
 
