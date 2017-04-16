@@ -44,10 +44,10 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <?php
-          echo "$_POST['time']";
-          echo "$_POST['room']";
-        ?>
+      <?php
+        echo $_POST['time'];
+        echo $_POST['room'];
+      ?>
       </div>
 
     </div>
