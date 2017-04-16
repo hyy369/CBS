@@ -126,6 +126,8 @@
           case 0:
             $time = '20:30';
             break;
+          default:
+            $time = 'No time';
         }
         switch (intdiv((int)$_POST['time'], 26)) {
           case 0:
@@ -143,6 +145,8 @@
           case 4:
             $date = '2017-04-21';
             break;
+          default:
+            $date = 'No date';
         }
         // Connecting, selecting database
         $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
