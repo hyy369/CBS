@@ -129,8 +129,7 @@
 
     </div>
   </div>
-</body>
-<?php
+</body><? php
 // Free resultset
 pg_free_result($result);
 
