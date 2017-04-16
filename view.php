@@ -46,27 +46,48 @@
       <div class="row">
         <table>
           <tr>
-            <th>04-17</th>
-            <th>04-18</th>
-            <th>04-19</th>
-            <th>04-20</th>
-            <th>04-21</th>
+            <th>08:00</th>
+            <th>08:30</th>
+            <th>09:00</th>
+            <th>09:30</th>
+            <th>10:00</th>
+            <th>10:30</th>
+            <th>11:00</th>
+            <th>11:30</th>
+            <th>12:00</th>
+            <th>12:30</th>
+            <th>13:00</th>
+            <th>13:30</th>
+            <th>14:00</th>
+            <th>14:30</th>
+            <th>15:00</th>
+            <th>15:30</th>
+            <th>16:00</th>
+            <th>16:30</th>
+            <th>17:00</th>
+            <th>17:30</th>
+            <th>18:00</th>
+            <th>18:30</th>
+            <th>19:00</th>
+            <th>19:30</th>
+            <th>20:00</th>
+            <th>20:30</th>
+            <th>21:00</th>
+            <th>21:30</th>
+            <th>22:00</th>
           </tr>
           <?php
             // Connecting, selecting database
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
              or die('Could not connect:' . pg_last_error());
-            $sql = "SELECT * FROM times WHERE room_id='";
+            $sql = "SELECT event_id FROM times WHERE room_id='";
             $sql .= $_GET["room"];
-            $sql .= "' ORDER BY date, time;";
+            $sql .= "' AND (date >= '2017-04-17' AND date <= '2017-04-21') ORDER BY date, time;";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
             while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
               echo "\t<tr>\n";
               echo "\t\t<td>$line[0]</td>\n";
-              echo "\t\t<td>$line[1]</td>\n";
-              echo "\t\t<td>$line[2]</td>\n";
-              echo "\t\t<td>$line[3]</td>\n";
               echo "\t</tr>\n";
             }
           ?>
