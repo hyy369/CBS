@@ -117,11 +117,11 @@
                     echo "\t</tr>\n";
                   }
                 }
-                $_POST["room"] = $_GET["room"];
               ?>
             </table>
           </div>
           <div class="row">
+            <input type="hidden" name="room" value="<?php echo htmlspecialchars($_GET['room']) ?>">
             <input type="submit" value="Request these time slots">
           </div>
         </form>
