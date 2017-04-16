@@ -82,9 +82,27 @@
             $sql .= "' AND (date >= '2017-04-17' AND date <= '2017-04-21') ORDER BY date, time;";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
             $count = 0;
+            $day = 1;
             while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
               if ($count % 26 == 0) {
-                echo "\t<tr>\n";
+                switch ($day) {
+                  case 1:
+                    echo "\t<tr>\n\t\t<td>Monday</td>";
+                    break;
+                  case 2:
+                    echo "\t<tr>\n\t\t<td>Tuesday</td>";
+                    break;
+                  case 3:
+                    echo "\t<tr>\n\t\t<td>Wednesday</td>";
+                    break;
+                  case 4:
+                    echo "\t<tr>\n\t\t<td>Thursday</td>";
+                    break;
+                  case 5:
+                    echo "\t<tr>\n\t\t<td>Friday</td>";
+                    break;
+                }
+                $day += 1;
               }
               echo "\t\t<td>$line[0]</td>\n";
               $count += 1;
