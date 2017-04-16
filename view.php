@@ -45,7 +45,7 @@
     <div class="container">
       <div class="row">
         <?php
-          echo $_GET['room'];
+          echo "$_GET['room']";
         ?>
         <table>
           <?php
