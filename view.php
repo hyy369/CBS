@@ -47,7 +47,7 @@
         <?php
           echo $_GET['room'];
         ?>
-        <table id="roomTable">
+        <table>
           <?php
             // Connecting, selecting database
             //$dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
