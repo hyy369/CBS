@@ -49,8 +49,8 @@
             // Connecting, selecting database
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
               or die('Could not connect:' . pg_last_error());
-            $sql = "SELECT * FROM times WHERE room_id=$_GET["room_id"];";
-            echo "$_GET["room_id"]";
+            $sql = "SELECT * FROM times WHERE room_id=$_GET['room_id'];";
+            echo "$_GET['room_id']";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
             // while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
