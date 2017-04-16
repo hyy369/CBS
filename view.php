@@ -106,7 +106,7 @@
                   }
                   $day += 1;
                 }
-                if ($line[0]) {
+                if ($line[0] != NULL) {
                   echo "\t\t<td>$line[0]</td>\n";
                 } else {
                   echo "\t\t<td><input type="checkbox" name="" value=""></td>";
