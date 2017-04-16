@@ -44,6 +44,9 @@
   <div id="body">
     <div class="container">
       <div class="row">
+        <?php
+          echo $_GET['room'];
+        ?>
         <table id="roomTable">
           <?php
             // Connecting, selecting database
