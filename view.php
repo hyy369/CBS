@@ -106,10 +106,10 @@
                   }
                   $day += 1;
                 }
-                if ($line[0] != NULL) {
+                if ($line[0]) {
                   echo "\t\t<td>$line[0]</td>\n";
                 } else {
-                  echo "\t\t<td><input type="checkbox" name="" value=""></td>";
+                  echo "\t\t<td><input type='checkbox' name='' value=''></td>";
                 }
                 $count += 1;
                 if ($count % 26 == 0) {
