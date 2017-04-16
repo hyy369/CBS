@@ -117,7 +117,7 @@
 
             while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
               echo "\t<tr>\n";
-              echo "\t\t<td>$line[0]</td>\n";
+              echo "\t\t<td><a href="view.php">$line[0]</a></td>\n";
               echo "\t\t<td>$line[3]</td>\n";
               echo "\t\t<td>$line[4]</td>\n";
               echo "\t\t<td>$line[5]</td>\n";
