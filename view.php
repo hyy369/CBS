@@ -43,7 +43,7 @@
   </div> <!--end Header-->
   <div id="body">
     <div class="container">
-      <div class="row">
+      <div class="row" style="overflow-x:auto;">
         <form action="">
           <table>
             <tr>
