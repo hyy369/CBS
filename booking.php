@@ -44,7 +44,7 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <form action="confirmation.php">
+        <form action="confirmation.php" method="post">
           <div class="row" style="overflow-x:auto;">
             <table>
               <tr>
