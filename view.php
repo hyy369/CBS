@@ -44,28 +44,24 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <?php
-          echo "$_GET['room']";
-        ?>
         <table>
           <?php
-            // Connecting, selecting database
-            //$dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
-            //  or die('Could not connect:' . pg_last_error());
-            //$sql = "SELECT * FROM times WHERE room_id=$_GET['room'];";
-            echo "\t<tr>\n";
-            echo $_GET['room'];
-            echo "\t</tr>\n";
-            //$result = pg_query($sql) or die('Query failed: ' . pg_last_error());
+            Connecting, selecting database
+            $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+             or die('Could not connect:' . pg_last_error());
+            $sql = "SELECT * FROM times WHERE room_id=";
+            $sql .= $_GET["room"];
+            $sql .= ";";
+            $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
-            // while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
-            //   echo "\t<tr>\n";
-            //   echo "\t\t<td>$line[0]</td>\n";
-            //   echo "\t\t<td>$line[1]</td>\n";
-            //   echo "\t\t<td>$line[2]</td>\n";
-            //   echo "\t\t<td>$line[3]</td>\n";
-            //   echo "\t</tr>\n";
-            // }
+            while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
+              echo "\t<tr>\n";
+              echo "\t\t<td>$line[0]</td>\n";
+              echo "\t\t<td>$line[1]</td>\n";
+              echo "\t\t<td>$line[2]</td>\n";
+              echo "\t\t<td>$line[3]</td>\n";
+              echo "\t</tr>\n";
+            }
           ?>
         </table>
       </div>
