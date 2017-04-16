@@ -47,7 +47,7 @@
       <?php
         echo $_POST['time'];
         echo $_POST['room'];
-        switch ($_POST['time'] % 26) {
+        switch ((int)$_POST['time'] % 26) {
           case 1:
             $time = '08:00';
             break;
@@ -127,7 +127,7 @@
             $time = '20:30';
             break;
         }
-        switch (intdiv($_POST['time'], 26)) {
+        switch (intdiv((int)$_POST['time'], 26)) {
           case 0:
             $date = '2017-04-17';
             break;
