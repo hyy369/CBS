@@ -45,13 +45,20 @@
     <div class="container">
       <div class="row">
         <table>
+          <tr>
+            <th>04-17</th>
+            <th>04-18</th>
+            <th>04-19</th>
+            <th>04-20</th>
+            <th>04-21</th>
+          </tr>
           <?php
             // Connecting, selecting database
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
              or die('Could not connect:' . pg_last_error());
             $sql = "SELECT * FROM times WHERE room_id='";
             $sql .= $_GET["room"];
-            $sql .= "';";
+            $sql .= "' ORDER BY date, time;";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
             while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
