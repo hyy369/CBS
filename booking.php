@@ -44,7 +44,7 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <form action="">
+        <form action="confirmation.php">
           <div class="row" style="overflow-x:auto;">
             <table>
               <tr>
@@ -110,23 +110,27 @@
                   if ($line[0]) {
                     echo "\t\t<td>$line[0]</td>\n";
                   } else {
-                    echo "\t\t<td><input type='checkbox' name='' value=''></td>";
+                    echo "\t\t<td><input type='checkbox' name='time' value='$count'></td>";
                   }
                   $count += 1;
                   if ($count % 26 == 0) {
                     echo "\t</tr>\n";
                   }
                 }
+                $_POST["room"] = $_GET["room"];
               ?>
             </table>
           </div>
-          <input type="submit" value="Request these time slots">
+          <div class="row">
+            <input type="submit" value="Request these time slots">
+          </div>
         </form>
       </div>
 
     </div>
   </div>
-</body><? php
+</body>
+<?php
 // Free resultset
 pg_free_result($result);
 
