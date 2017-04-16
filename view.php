@@ -44,7 +44,7 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <form action="/action_page.php">
+        <form action="">
           <table>
             <tr>
               <th>Time</th>
