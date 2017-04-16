@@ -46,6 +46,7 @@
       <div class="row">
         <table>
           <tr>
+            <th>Time</th>
             <th>08:00</th>
             <th>08:30</th>
             <th>09:00</th>
