@@ -47,7 +47,6 @@
         <?php
           $timeList = $_POST["time_list"];
           foreach ($timeList as $selectedTime) {
-            echo $selectedTime;
             switch (((int)$selectedTime) % 26) {
               case 0:
                 $time = '08:00';
