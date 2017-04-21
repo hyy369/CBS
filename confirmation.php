@@ -45,8 +45,8 @@
     <div class="container">
       <div class="row">
         <?php
-          $date = '2017-04-21';
-          $time = '08:00';
+          $date = "2017-04-21";
+          $time = "08:00";
           echo "You booked "；
           // echo $_POST["room"];
           echo "on";
