@@ -148,6 +148,7 @@
             // $date = "2017-04-21";
             // $time = "08:00";
             echo "You booked ";
+            echo $_POST["room"];
             echo "on";
             echo $date;
             echo $time;
