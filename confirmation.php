@@ -137,23 +137,23 @@
                 $time = '20:30';
                 break;
             }
-            // switch (intdiv((int)$_POST['time'], 26)) {
-            //   case 0:
-            //     $date = '2017-04-17';
-            //     break;
-            //   case 1:
-            //     $date = '2017-04-18';
-            //     break;
-            //   case 2:
-            //     $date = '2017-04-19';
-            //     break;
-            //   case 3:
-            //     $date = '2017-04-20';
-            //     break;
-            //   case 4:
-            //     $date = '2017-04-21';
-            //     break;
-            // }
+            switch (intdiv((int)$selectedTime, 26)) {
+              case 0:
+                $date = '2017-04-17';
+                break;
+              case 1:
+                $date = '2017-04-18';
+                break;
+              case 2:
+                $date = '2017-04-19';
+                break;
+              case 3:
+                $date = '2017-04-20';
+                break;
+              case 4:
+                $date = '2017-04-21';
+                break;
+            }
             // $date = "2017-04-21";
             // $time = "08:00";
             // echo "You booked ";
