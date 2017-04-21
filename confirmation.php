@@ -153,6 +153,11 @@
             echo $date;
             echo $time;
           }
+          echo "You booked ";
+          echo $_POST["room"];
+          echo "on";
+          echo $date;
+          echo $time;
         ?>
       </div>
 
