@@ -50,7 +50,7 @@
           echo $_POST["room"];
           echo "on";
           echo count($_POST["time_list"]);
-          foreach ($_POST['time_list'] as $selectedTime) {
+          foreach ($_POST["time_list"] as $selectedTime) {
             echo $selectedTime;
             switch (((int)$selectedTime) % 26) {
               case 1:
