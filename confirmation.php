@@ -52,6 +52,25 @@
           $info = $_POST["info"];
           $room = $_POST["room"];
           $reserver = $_POST["reserver_id"];
+
+          // Set event_id to max of existing event ids +1
+          $getEventIdSql = "SELECT MAX(event_id)+1 FROM event;";
+          $getEventIdresult = pg_query($getEventIdSql) or die('Query failed: ' . pg_last_error());
+          $event_id = pg_fetch_array($getEventIdresult, null, PGSQL_NUM)[0];
+          echo $event_id;
+
+          // SQL insert new reserver and new event
+          $sql = "BEGIN;";
+          // Only insert reserver if not exist
+          $checkUserSql = "SELECT count(*) FROM reserver WHERE reserver_id=" .$reserver. ";";
+          $checkUserResult = pg_query($checkUserSql) or die('Query failed: ' . pg_last_error());
+          if (pg_fetch_array($checkUserResult, null, PGSQL_NUM)[0] == 0) {
+            $sql .= "INSERT INTO reserver VALUES(" . $reserver . ",3);";
+          }
+
+          $sql .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student','" . $info ."');" ;
+          $sql .= "COMMIT;";
+          $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
           foreach ($timeList as $selectedTime) {
             switch (((int)$selectedTime) % 26) {
               case 0:
@@ -151,13 +170,7 @@
                 $date = '2017-04-21';
                 break;
             }
-            $getEventSql = "SELECT MAX(event_id)+1 FROM event;";
-            $result = pg_query($getEventSql) or die('Query failed: ' . pg_last_error());
-            $event_id = pg_fetch_array($result, null, PGSQL_NUM)[0];
-            echo $event_id;
             $sql = "BEGIN;";
-            $sql .= "INSERT INTO reserver VALUES(" . $reserver . ",3);";
-            $sql .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student','" . $info ."');" ;
             $sql .= "UPDATE times SET event_id=" . $event_id . " ";
             $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
             $sql .= "COMMIT;";
