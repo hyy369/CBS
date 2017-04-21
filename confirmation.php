@@ -49,7 +49,6 @@
           $info = $_POST["info"];
           $room = $_POST["room"];
           $reserver = $_POST["reserver_id"];
-          echo "Student " . $reserver . " is <br>";
           foreach ($timeList as $selectedTime) {
             switch (((int)$selectedTime) % 26) {
               case 0:
@@ -151,13 +150,10 @@
             }
             // $date = "2017-04-21";
             // $time = "08:00";
-            echo "Booking ";
-            echo $room;
-            echo " for ";
-            echo $info;
-            echo " on ";
-            echo $date;
-            echo $time;
+            echo "Student " . $reserver
+            echo " has successfully booked " . $room;
+            echo " for " . $info;
+            echo " on " . $date . " " . $time;
             echo "<br>";
           }
         ?>
