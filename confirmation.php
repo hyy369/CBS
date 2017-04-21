@@ -45,12 +45,17 @@
     <div class="container">
       <div class="row">
         <?php
+          $timeList = $_POST["time_list"];
           echo $_POST["time_list"];
           echo "You booked ";
           echo $_POST["room"];
           echo "on";
-          echo count($_POST["time_list"]);
-          foreach (($_POST["time_list"]) as $selectedTime) {
+          echo count($timeList);
+          echo "<br>";
+          echo $timeList[0];
+          echo $timeList[1];
+          echo $timeList[2];
+          foreach ($timeList as $selectedTime) {
             echo $selectedTime;
             switch (((int)$selectedTime) % 26) {
               case 1:
