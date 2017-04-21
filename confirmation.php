@@ -137,7 +137,8 @@
                 $time = '20:30';
                 break;
             }
-            switch (intdiv(((int)$selectedTime), 26)) {
+            $d = 1;
+            switch ($d) {
               case 0:
                 $date = '2017-04-17';
                 break;
@@ -153,8 +154,8 @@
               case 4:
                 $date = '2017-04-21';
                 break;
-              default:
-                $date = '2017-05-01';
+              // default:
+              //   $date = '2017-05-01';
             }
             // $date = "2017-04-21";
             // $time = "08:00";
