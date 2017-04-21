@@ -49,7 +49,7 @@
           $info = $_POST["info"];
           $room = $_POST["room"];
           $reserver = $_POST["reserver_id"];
-          echo "Student " . reserver . " is <br>";
+          echo "Student " . $reserver . " is <br>";
           foreach ($timeList as $selectedTime) {
             switch (((int)$selectedTime) % 26) {
               case 0:
