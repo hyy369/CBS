@@ -45,6 +45,9 @@
     <div class="container">
       <div class="row">
         <?php
+          // Connecting, selecting database
+          $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+           or die('Could not connect:' . pg_last_error());
           $timeList = $_POST["time_list"];
           $info = $_POST["info"];
           $room = $_POST["room"];
@@ -148,8 +151,16 @@
                 $date = '2017-04-21';
                 break;
             }
-            // $date = "2017-04-21";
-            // $time = "08:00";
+            $getEventSql = "SELECT MAX(event_id)+1 FROM event;";
+            $result = pg_query($getEventSql) or die('Query failed: ' . pg_last_error());
+            $event_id = pg_fetch_array($result, null, PGSQL_NUM)[0];
+            echo $event_id;
+            $sql = "BEGIN;";
+            $sql .= "INSERT INTO reserver VALUES(" . $reserver . ",3);";
+            $sqp .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student'," . $info .");" ;
+            $sql .= "UPDATE times SET event_id='" . $event_id . "' ";
+            $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
+            echo $sql;
             echo "Student " . $reserver;
             echo " has successfully booked " . $room;
             echo " for " . $info;
