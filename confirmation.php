@@ -157,8 +157,8 @@
             echo $event_id;
             $sql = "BEGIN;";
             $sql .= "INSERT INTO reserver VALUES(" . $reserver . ",3);";
-            $sql .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student'," . $info .");" ;
-            $sql .= "UPDATE times SET event_id='" . $event_id . "' ";
+            $sql .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student','" . $info ."');" ;
+            $sql .= "UPDATE times SET event_id=" . $event_id . " ";
             $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
             $sql .= "COMMIT;";
             echo $sql;
