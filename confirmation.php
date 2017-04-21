@@ -50,7 +50,7 @@
         //  or die('Could not connect:' . pg_last_error());
         // echo $_POST['time'];
         // echo $_POST['room'];
-        foreach ($_POST['time_list'] as $selectedTime) {
+        // foreach ($_POST['time_list'] as $selectedTime) {
           // switch (((int)$selectedTime) % 26) {
           //   case 1:
           //     $time = '08:00';
@@ -157,7 +157,7 @@
           echo "on";
           echo $date;
           echo $time;
-        }
+        // }
       ?>
       </div>
 
