@@ -45,6 +45,7 @@
     <div class="container">
       <div class="row">
         <?php
+          echo $_POST['time_list'];
           foreach ($_POST['time_list'] as $selectedTime) {
             switch (((int)$selectedTime) % 26) {
               case 1:
