@@ -110,7 +110,7 @@
                   if ($line[0]) {
                     echo "\t\t<td>$line[0]</td>\n";
                   } else {
-                    echo "\t\t<td><input type='checkbox' name='time' value='$count'></td>";
+                    echo "\t\t<td><input type='checkbox' name='time_list[]' value='$count'></td>";
                   }
                   $count += 1;
                   if ($count % 26 == 0) {
