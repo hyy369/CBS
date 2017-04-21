@@ -46,6 +46,11 @@
       <div class="row">
         <?php
           echo $_POST['time_list'];
+          echo "You booked ";
+          echo $_POST["room"];
+          echo "on";
+          echo $date;
+          echo $time;
           foreach ($_POST['time_list'] as $selectedTime) {
             echo $selectedTime;
             switch (((int)$selectedTime) % 26) {
@@ -153,11 +158,6 @@
             echo $date;
             echo $time;
           }
-          echo "You booked ";
-          echo $_POST["room"];
-          echo "on";
-          echo $date;
-          echo $time;
         ?>
       </div>
 
