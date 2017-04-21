@@ -161,7 +161,7 @@
             $sql .= "UPDATE times SET event_id=" . $event_id . " ";
             $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
             $sql .= "COMMIT;";
-            echo $sql;
+            $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
             echo "<br>";
             echo "Student " . $reserver;
             echo " has successfully booked " . $room;
