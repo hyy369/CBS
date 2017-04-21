@@ -160,7 +160,9 @@
             $sqp .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student'," . $info .");" ;
             $sql .= "UPDATE times SET event_id='" . $event_id . "' ";
             $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
+            $sql .= "COMMIT;"
             echo $sql;
+            echo "<br>";
             echo "Student " . $reserver;
             echo " has successfully booked " . $room;
             echo " for " . $info;
