@@ -137,7 +137,7 @@
                 $time = '20:30';
                 break;
             }
-            switch (intdiv((int)$selectedTime, 26)) {
+            switch (intdiv(((int)$selectedTime), 26)) {
               case 0:
                 $date = '2017-04-17';
                 break;
