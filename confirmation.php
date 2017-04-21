@@ -150,7 +150,7 @@
             }
             // $date = "2017-04-21";
             // $time = "08:00";
-            echo "Student " . $reserver
+            echo "Student " . $reserver;
             echo " has successfully booked " . $room;
             echo " for " . $info;
             echo " on " . $date . " " . $time;
