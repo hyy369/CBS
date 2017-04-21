@@ -46,15 +46,6 @@
       <div class="row">
         <?php
           $timeList = $_POST["time_list"];
-          echo $_POST["time_list"];
-          echo "You booked ";
-          echo $_POST["room"];
-          echo "on";
-          echo count($timeList);
-          echo "<br>";
-          echo $timeList[0];
-          echo $timeList[1];
-          echo $timeList[2];
           foreach ($timeList as $selectedTime) {
             echo $selectedTime;
             switch (((int)$selectedTime) % 26) {
@@ -154,16 +145,15 @@
               case 4:
                 $date = '2017-04-21';
                 break;
-              // default:
-              //   $date = '2017-05-01';
             }
             // $date = "2017-04-21";
             // $time = "08:00";
-            // echo "You booked ";
-            // echo $_POST["room"];
-            // echo "on";
-            // echo $date;
-            // echo $time;
+            echo "You booked ";
+            echo $_POST["room"];
+            echo " on ";
+            echo $date;
+            echo $time;
+            echo "<br>";
           }
         ?>
       </div>
