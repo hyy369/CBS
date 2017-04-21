@@ -138,7 +138,7 @@
                 break;
             }
             $d = 1;
-            switch ($d) {
+            switch ((int)((int)$selectedTime / 26)) {
               case 0:
                 $date = '2017-04-17';
                 break;
