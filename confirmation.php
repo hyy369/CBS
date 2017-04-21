@@ -49,82 +49,82 @@
           foreach ($timeList as $selectedTime) {
             echo $selectedTime;
             switch (((int)$selectedTime) % 26) {
-              case 1:
+              case 0:
                 $time = '08:00';
                 break;
-              case 2:
+              case 1:
                 $time = '08:30';
                 break;
-              case 3:
+              case 2:
                 $time = '09:00';
                 break;
-              case 4:
+              case 3:
                 $time = '09:30';
                 break;
-              case 5:
+              case 4:
                 $time = '10:00';
                 break;
-              case 6:
+              case 5:
                 $time = '10:30';
                 break;
-              case 7:
+              case 6:
                 $time = '11:00';
                 break;
-              case 8:
+              case 7:
                 $time = '11:30';
                 break;
-              case 9:
+              case 8:
                 $time = '12:00';
                 break;
-              case 10:
+              case 9:
                 $time = '12:30';
                 break;
-              case 11:
+              case 10:
                 $time = '13:00';
                 break;
-              case 12:
+              case 11:
                 $time = '13:30';
                 break;
-              case 13:
+              case 12:
                 $time = '14:00';
                 break;
-              case 14:
+              case 13:
                 $time = '14:30';
                 break;
-              case 15:
+              case 14:
                 $time = '15:00';
                 break;
-              case 16:
+              case 15:
                 $time = '15:30';
                 break;
-              case 17:
+              case 16:
                 $time = '16:00';
                 break;
-              case 18:
+              case 17:
                 $time = '16:30';
                 break;
-              case 19:
+              case 18:
                 $time = '17:00';
                 break;
-              case 20:
+              case 19:
                 $time = '17:30';
                 break;
-              case 21:
+              case 20:
                 $time = '18:00';
                 break;
-              case 22:
+              case 21:
                 $time = '18:30';
                 break;
-              case 23:
+              case 22:
                 $time = '19:00';
                 break;
-              case 24:
+              case 23:
                 $time = '19:30';
                 break;
-              case 25:
+              case 24:
                 $time = '20:00';
                 break;
-              case 0:
+              case 25:
                 $time = '20:30';
                 break;
             }
