@@ -129,10 +129,10 @@
             </div>
             <div class="row">
               <input type="hidden" name="room" value="<?php echo htmlspecialchars($_GET['room']) ?>">
-              <span>Give your reservation a name (this will be public):* </span>
+              <h4>Give your reservation a name (this will be public):<span style="color: red;">*</span> </h4>
               <input type="text" name="info">
               <br>
-              <span>Your student ID number (930):* </span>
+              <h4>Your student ID number (930):<span style="color: red;">*</span> </h4>
               <input type="number" name="reserver_id" min="0">
               <br>
               <input type="submit" name="submit" value="Submit my booking request">
