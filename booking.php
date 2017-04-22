@@ -52,7 +52,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h3>Availability for <<?php echo $_GET['room'] ?>: </h3>
+          <h3>Availability for <?php echo $_GET['room'] ?>: </h3>
           <h5><span style="color: rgb(34,177,76)">Green</span> = Free; <span style="color: rgb(223,0,60)">Red</span> = Busy.</h5>
           <form action="confirmation.php" method="post">
             <div class="row" style="overflow-x:auto;">
