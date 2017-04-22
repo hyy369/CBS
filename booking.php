@@ -116,7 +116,7 @@
                       $day += 1;
                     }
                     if ($line[0]) {
-                      echo "\t\t<td style='background-color:rgb(223,0,60)'>$line[0]</td>\n";
+                      echo "\t\t<td style='background-color:rgb(223,0,60)'></td>\n";
                     } else {
                       echo "\t\t<td style='background-color:rgb(34,177,76)'><input type='checkbox' name='time_list[]' value='$count'></td>";
                     }
