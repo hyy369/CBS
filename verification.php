@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-md-12">
             <h4><span style="color: red;">*</span>Please provide the reserver's student ID to cancel this booking:</h4>
-            <input type="number" id="verificationInput" name="verification">
+            <input type="number" id="verificationInput" name="verification" min="0">
           </div>
         </div>
         <div class="row">
