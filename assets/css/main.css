@@ -67,3 +67,7 @@ tr.header, tr:hover {
 #logo-img:hover {
 	background-image: url('../img/logo-eye-closed.png');
 }
+
+strong.input-label{
+	font-size: 14px;
+}
