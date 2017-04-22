@@ -54,34 +54,34 @@
           <p><strong>Please check the features you would like to have:</strong></p>
           <form action ="features.php" method="post">
             <div class="row">
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="checkbox" name="projector" value="true">
                 <span>Projector</span>
               </div>
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="checkbox" name="chalkboard" value="true">
                 <span>Chalkboard</span>
               </div>
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="checkbox" name="whiteboard" value="true">
                 <span>Whiteboard</span>
               </div>
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <input type="checkbox" name="visualizer" value="true">
                 <span>Visualizer</span>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-4">
                 <span>Minimum number of outlets: </span>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-4">
                 <input type="number" name="min_outlets" min="0">
               </div>
-              <div class="col-md-2">
+              <div class="col-md-4">
                 <span>Minimum capacity: </span>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-4">
                 <input type="number" name="min_cap" min="0">
               </div>
             </div>
