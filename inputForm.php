@@ -5,7 +5,7 @@
 		<meta content="utf-8" http-equiv="encoding">
 	</head>
 	<body>
-		<form action="write-input.php" method="post">
+		<form action="toInput.php" method="post">
 			CRN:<input type="text" name="crn" required><br>
 			DESIRED ROOM:
 		  	<select name="building" id='building'>
@@ -68,7 +68,10 @@
 
 		 	<input type='submit'>
 		 	<input type='reset'>
-		</form>
-
+		</form> 
+		
 	</body>
 </html>
+
+
+
