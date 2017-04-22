@@ -52,57 +52,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h5>* Only student reservations is displayed here</h5>
-          <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Type to search for event..">
-          <table id="roomTable">
-          <tr>
-            <th>Event Title</th>
-            <th>Seq. No.</th>
-            <th>Classification</th>
-            <th>Action</th>
-          </tr>
-          <?php
-          // Performing SQL query
-          $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
-          or die('Could not connect:' . pg_last_error());
-          $query = "SELECT * FROM event WHERE type='student'";
-          $result = pg_query($query) or die('Query failed: ' . pg_last_error());
-
-          while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
-            echo "\t<tr>\n";
-            echo "\t\t<td>$line[3]</td>\n";
-            echo "\t\t<td>$line[0]</td>\n";
-            echo "\t\t<td>$line[2]</td>\n";
-            echo "\t\t<td><a href='verification.php?event_id=$line[0]'>Cancel</a></td>\n";
-            echo "\t</tr>\n";
-          }
-          ?>
-          </table>
-          <script>
-            function searchRoom() {
-              // Declare variables
-              var input, filter, table, tr, td, i;
-              input = document.getElementById("roomInput");
-              filter = input.value.toUpperCase();
-              table = document.getElementById("roomTable");
-              tr = table.getElementsByTagName("tr");
-
-              // Loop through all table rows, and hide those who don't match the search query
-              for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                  } else {
-                    tr[i].style.display = "none";
-                  }
-                }
-              }
-            }
-          </script>
+          <h4>Please provide the reserver's student ID to cancel this booking:</h4>
+          <input type="number" id="verificationInput">
         </div>
       </div>
-
+      <div class="row">
+        <input type="submit" name="submit" value="Confirm Cancellation">
+      </div>
     </div>
   </div>
 </body>
