@@ -52,6 +52,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <h4>Availability for <<?php echo htmlspecialchars($_GET['room']) ?>: </h4>
+          <h5><span style="color: rgb(34,177,76)">Green</span> = Free; <span style="color: rgb(34,177,76)">Red</span> = Busy.</h5>
           <form action="confirmation.php" method="post">
             <div class="row" style="overflow-x:auto;">
               <table>
