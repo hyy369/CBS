@@ -56,33 +56,33 @@
             <div class="row" style="overflow-x:auto;">
               <table>
                 <tr>
-                  <th>Time</th>
-                  <th>08:00</th>
-                  <th>08:30</th>
-                  <th>09:00</th>
-                  <th>09:30</th>
-                  <th>10:00</th>
-                  <th>10:30</th>
-                  <th>11:00</th>
-                  <th>11:30</th>
-                  <th>12:00</th>
-                  <th>12:30</th>
-                  <th>13:00</th>
-                  <th>13:30</th>
-                  <th>14:00</th>
-                  <th>14:30</th>
-                  <th>15:00</th>
-                  <th>15:30</th>
-                  <th>16:00</th>
-                  <th>16:30</th>
-                  <th>17:00</th>
-                  <th>17:30</th>
-                  <th>18:00</th>
-                  <th>18:30</th>
-                  <th>19:00</th>
-                  <th>19:30</th>
-                  <th>20:00</th>
-                  <th>20:30</th>
+                  <th id='date-cell'>Time</th>
+                  <th id='date-cell'>08:00</th>
+                  <th id='date-cell'>08:30</th>
+                  <th id='date-cell'>09:00</th>
+                  <th id='date-cell'>09:30</th>
+                  <th id='date-cell'>10:00</th>
+                  <th id='date-cell'>10:30</th>
+                  <th id='date-cell'>11:00</th>
+                  <th id='date-cell'>11:30</th>
+                  <th id='date-cell'>12:00</th>
+                  <th id='date-cell'>12:30</th>
+                  <th id='date-cell'>13:00</th>
+                  <th id='date-cell'>13:30</th>
+                  <th id='date-cell'>14:00</th>
+                  <th id='date-cell'>14:30</th>
+                  <th id='date-cell'>15:00</th>
+                  <th id='date-cell'>15:30</th>
+                  <th id='date-cell'>16:00</th>
+                  <th id='date-cell'>16:30</th>
+                  <th id='date-cell'>17:00</th>
+                  <th id='date-cell'>17:30</th>
+                  <th id='date-cell'>18:00</th>
+                  <th id='date-cell'>18:30</th>
+                  <th id='date-cell'>19:00</th>
+                  <th id='date-cell'>19:30</th>
+                  <th id='date-cell'>20:00</th>
+                  <th id='date-cell'>20:30</th>
                 </tr>
                 <?php
                   // Connecting, selecting database
@@ -98,19 +98,19 @@
                     if ($count % 26 == 0) {
                       switch ($day) {
                         case 1:
-                          echo "\t<tr>\n\t\t<td>Monday</td>";
+                          echo "\t<tr>\n\t\t<td id='date-cell'>Monday</td>";
                           break;
                         case 2:
-                          echo "\t<tr>\n\t\t<td>Tuesday</td>";
+                          echo "\t<tr>\n\t\t<td id='date-cell'>Tuesday</td>";
                           break;
                         case 3:
-                          echo "\t<tr>\n\t\t<td>Wednesday</td>";
+                          echo "\t<tr>\n\t\t<td id='date-cell'>Wednesday</td>";
                           break;
                         case 4:
-                          echo "\t<tr>\n\t\t<td>Thursday</td>";
+                          echo "\t<tr>\n\t\t<td id='date-cell'>Thursday</td>";
                           break;
                         case 5:
-                          echo "\t<tr>\n\t\t<td>Friday</td>";
+                          echo "\t<tr>\n\t\t<td id='date-cell'>Friday</td>";
                           break;
                       }
                       $day += 1;
