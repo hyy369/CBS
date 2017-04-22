@@ -195,4 +195,11 @@
     </div>
   </div>
 </body>
+<?php
+// Free resultset
+pg_free_result($result);
+
+// Closing connection
+pg_close($dbconn);
+?>
 </html>

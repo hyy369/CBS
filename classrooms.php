@@ -108,11 +108,11 @@
     </div>
   </div>
 </body>
-</html>
-<? php
+<?php
 // Free resultset
 pg_free_result($result);
 
 // Closing connection
-pg_close<$dbconn);
+pg_close($dbconn);
 ?>
+</html>
