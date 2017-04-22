@@ -51,7 +51,7 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
           <?php
             // Connecting, selecting database
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
@@ -182,15 +182,15 @@
               $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
               $sql .= "COMMIT;";
               $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-              echo "<h3 style='color: green;'>";
+              echo "<h4 style='color: green;'>";
               echo "Student " . $reserver;
               echo " has successfully booked " . $room;
-              echo " for " . $info . "(event no.: " .$event_id.")";
+              echo " for " . $info . " (event no.: " .$event_id.")";
               echo " on " . $date . " " . $time;
-              echo "<h3>";
+              echo "<h4>";
             }
           ?>
-          <h4><a href="home.html">Go back to home page</a></h4>
+          <h5><a href="home.html">Go back to home page</a></h5>
         </div>
       </div>
 
