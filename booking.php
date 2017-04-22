@@ -116,9 +116,9 @@
                       $day += 1;
                     }
                     if ($line[0]) {
-                      echo "\t\t<td style='background-color:rgb(223,0,60)'></td>\n";
+                      echo "\t\t<td id='time-cell-busy'></td>\n";
                     } else {
-                      echo "\t\t<td style='background-color:rgb(34,177,76)'><input type='checkbox' name='time_list[]' value='$count'></td>";
+                      echo "\t\t<td id='time-cell-free'><input type='checkbox' name='time_list[]' value='$count'></td>";
                     }
                     $count += 1;
                     if ($count % 26 == 0) {

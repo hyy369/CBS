@@ -58,14 +58,30 @@ tr.header, tr:hover {
     background-color: #f1f1f1;
 }
 
+#time-cell-free {
+	background-color:rgba(34,177,76,1);
+}
+
+#time-cell-free:hover {
+	background-color:rgba(34,177,76,0.8);
+}
+
+#time-cell-busy {
+	background-color:rgba(223,0,60,1);
+}
+
+#time-cell-busy:hover {
+	background-color:rgba(223,0,60,0.8);
+}
+
 #logo-img {
-	background-image: url('../img/logo.png');
+	background-image: url('../img/logo-eye-closed.png');
 	width: 328px;
 	height: 100px;
 }
 
 #logo-img:hover {
-	background-image: url('../img/logo-eye-closed.png');
+	background-image: url('../img/logo.png');
 }
 
 strong.input-label{
