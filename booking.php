@@ -51,7 +51,7 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-11">
           <form action="confirmation.php" method="post">
             <div class="row" style="overflow-x:auto;">
               <table>
