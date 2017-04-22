@@ -53,25 +53,28 @@
       <div class="row">
         <div class="col-md-12">
           <form action="cancel.php" method="post">
+            <p>* Only student reservations is displayed here</p>
             <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Type to search for event..">
             <table id="roomTable">
             <tr>
-              <th>Event ID</th>
+              <th>Event Title</th>
+              <th>Event No.</th>
               <th>Classification</th>
-              <th>Event Info</th>
+              <th>Action</th>
             </tr>
             <?php
             // Performing SQL query
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
             or die('Could not connect:' . pg_last_error());
-            $query = "SELECT * FROM event";
+            $query = "SELECT * FROM event WHERE type='student'";
             $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
             while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
               echo "\t<tr>\n";
-              echo "\t\t<td>$line[0]</a></td>\n";
-              echo "\t\t<td>$line[2]</td>\n";
               echo "\t\t<td>$line[3]</td>\n";
+              echo "\t\t<td>$line[0]</td>\n";
+              echo "\t\t<td>$line[2]</td>\n";
+              echo "\t\t<td><a href="">Cancel</a></td>\n";
               echo "\t</tr>\n";
             }
             ?>
