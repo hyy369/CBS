@@ -182,14 +182,15 @@
               $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
               $sql .= "COMMIT;";
               $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-              echo "<br>";
+              echo "<h3 style='color: green;'>";
               echo "Student " . $reserver;
               echo " has successfully booked " . $room;
               echo " for " . $info . "(event no.: " .$event_id.")";
               echo " on " . $date . " " . $time;
-              echo "<br>";
+              echo "<h3>";
             }
           ?>
+          <h4><a href="home.html">Go back to home page</a></h4>
         </div>
       </div>
 
