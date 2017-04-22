@@ -53,23 +53,46 @@
         <div class="col-md-9">
           <p><strong>Please check the features you would like to have:</strong></p>
           <form action ="features.php" method="post">
-            <input type="checkbox" name="projector" value="true">
-            <span>Projector</span>
-            <input type="checkbox" name="chalkboard" value="true">
-            <span>Chalkboard</span>
-            <input type="checkbox" name="whiteboard" value="true">
-            <span>Whiteboard</span>
-            <input type="checkbox" name="visualizer" value="true">
-            <span>Visualizer</span>
-            <br>
-            <span>Minimum number of outlets: </span>
-            <input type="number" name="min_outlets" min="0">
-            <br>
-            <span>Minimum capacity: </span>
-            <input type="number" name="min_cap" min="0">
-            <br>
-            <input type="submit" value="Search Rooms">
-            <input type ="reset">
+            <div class="row">
+              <div class="col-md-1">
+                <input type="checkbox" name="projector" value="true">
+                <span>Projector</span>
+              </div>
+              <div class="col-md-1">
+                <input type="checkbox" name="chalkboard" value="true">
+                <span>Chalkboard</span>
+              </div>
+              <div class="col-md-1">
+                <input type="checkbox" name="whiteboard" value="true">
+                <span>Whiteboard</span>
+              </div>
+              <div class="col-md-1">
+                <input type="checkbox" name="visualizer" value="true">
+                <span>Visualizer</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <span>Minimum number of outlets: </span>
+              </div>
+              <div class="col-md-2">
+                <input type="number" name="min_outlets" min="0">
+              </div>
+              <div class="col-md-2">
+                <span>Minimum capacity: </span>
+              </div>
+              <div class="col-md-2">
+                <input type="number" name="min_cap" min="0">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <input type="submit" value="Search Rooms">
+              </div>
+              <div class="col-md-2">
+                <input type ="reset">
+              </div>
+            </div>
           </form>
         </div>
       </div>
