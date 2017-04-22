@@ -70,7 +70,7 @@
               $sql .= "DELETE FROM event WHERE event_id=$event_id;";
               $sql .= "COMMIT;";
               $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-              echo "<h4 style='color: green;' >Booking No." .$event_id. " has been successfully canceled.</h4>";
+              echo "<h4 style='color: green;' >Booking No." .$event_id. " has been successfully cancelled.</h4>";
             } else {
               echo "<h4 style='color: red;'>Verification failed. You do not have the right to cancel this booking.</h4>";
             }
