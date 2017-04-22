@@ -50,20 +50,33 @@
   </div> <!--end Header-->
   <div id="body">
     <div class="container">
-      <form action="cancel-confirmation.php" method="post">
-        <div class="row">
-          <div class="col-md-12">
-            <h4><span style="color: red;">*</span>Please provide the reserver's student ID to cancel this booking:</h4>
-            <input type="number" id="verificationInput" name="verification">
-          </div>
+      <div class="row">
+        <div class="col-md-9">
+          <?php
+            // Connecting, selecting database
+            $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+             or die('Could not connect:' . pg_last_error());
+            $event_id = $_POST["event_id"];
+            $verification = $_POST["verificationInput"];
+
+            // Set event_id to max of existing event ids +1
+            $getReserverIdSql = "SELECT reserver_id FROM event WHERE event_id=" .$event_id. ";";
+            $getReserverIdresult = pg_query($getReserverIdSql) or die('Query failed: ' . pg_last_error());
+            $reserver_id = pg_fetch_array($getReserverIdresult, null, PGSQL_NUM)[0];
+            if (((int)$verification) == $reserver_id) {
+              $sql = "BEGIN;";
+              $sql .= "UPDATE times SET event_id=null WHERE event_id=$event_id;";
+              $sql .= "DELETE FROM event WHERE event_id=$event_id;";
+              $sql .= "COMMIT;";
+              $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
+              echo "Booking No. " .$event_id. " is successfully canceled.";
+            } else {
+              echo "Verification failed. You do not have to right to cancel this booking.";
+            }
+          ?>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <input type="hidden" name="event_id" value="<?php echo htmlspecialchars($_GET['event_id']) ?>">
-            <input type="submit" name="submit" value="Confirm Cancellation">
-          </div>
-        </div>
-      </form>
+      </div>
+
     </div>
   </div>
 </body>

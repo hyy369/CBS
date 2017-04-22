@@ -42,6 +42,7 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="classrooms.php">Search by Classrooms</a></li>
             <li><a href="features.php">Search by Features</a></li>
+            <li><a href="events.php">Confirmed Reservations</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
