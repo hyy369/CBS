@@ -63,6 +63,10 @@
             $getReserverIdSql = "SELECT reserver_id FROM event WHERE event_id=" .$event_id. ";";
             $getReserverIdresult = pg_query($getReserverIdSql) or die('Query failed: ' . pg_last_error());
             $reserver_id = pg_fetch_array($getReserverIdresult, null, PGSQL_NUM)[0];
+            echo $verification;
+            echo "<br>";
+            echo $reserver_id;
+
             if (((int)$verification) == $reserver_id) {
               $sql = "BEGIN;";
               $sql .= "UPDATE times SET event_id=null WHERE event_id=$event_id;";
