@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>CS421 Database G11 Project "Class Booking Service"</title>
@@ -14,8 +15,8 @@
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
 <body>
-
   <div id="header">
+
     <!--Puts logo into Bootstrap grid so that it properly resizes across devices-->
     <div class="container">
       <div class="row">
@@ -47,28 +48,68 @@
       </div>
     </div>
   </div> <!--end Header-->
+  <div id="body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="cancel.php" method="post">
+            <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Type to search for event..">
+            <table id="roomTable">
+            <tr>
+              <th>Event ID</th>
+              <th>Classification</th>
+              <th>Event Info</th>
+            </tr>
+            <?php
+            // Performing SQL query
+            $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+            or die('Could not connect:' . pg_last_error());
+            $query = "SELECT * FROM event";
+            $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <h3>Group Members</h3>
-        <ul>
-          <li>Shennie Yao</li>
-          <li>Nicholas Whays (Contact Person)</li>
-          <li>Yangyang He</li>
-        </ul>
+            while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
+              echo "\t<tr>\n";
+              echo "\t\t<td>$line[0]</a></td>\n";
+              echo "\t\t<td>$line[2]</td>\n";
+              echo "\t\t<td>$line[3]</td>\n";
+              echo "\t</tr>\n";
+            }
+            ?>
+            </table>
+            <script>
+              function searchRoom() {
+                // Declare variables
+                var input, filter, table, tr, td, i;
+                input = document.getElementById("roomInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("roomTable");
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                  td = tr[i].getElementsByTagName("td")[0];
+                  if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                      tr[i].style.display = "";
+                    } else {
+                      tr[i].style.display = "none";
+                    }
+                  }
+                }
+              }
+            </script>
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-9">
-        <h3>Stage Documents</h3>
-        <ul>
-          <li><a href="assets/CBS_STAGE_1.pdf">Stage 1 (PDF)</a></li>
-          <li><a href="assets/CBS_STAGE_2.pdf">Stage 2 (PDF)</a></li>
-          <li><a href="assets/CBS_STAGE_3.pdf">Stage 3 (PDF)</a></li>
-        </ul>
-      </div>
+
     </div>
   </div>
 </body>
+<?php
+// Free resultset
+pg_free_result($result);
+
+// Closing connection
+pg_close($dbconn);
+?>
 </html>

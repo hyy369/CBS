@@ -42,6 +42,7 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="classrooms.php">Search by Classrooms</a></li>
             <li><a href="features.php">Search by Features</a></li>
+            <li><a href="events.php">Confirmed Reservations</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -52,7 +53,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Search for rooms..">
+        <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Type to search for rooms..">
 
         <table id="roomTable">
         <tr>
