@@ -4,9 +4,15 @@
 <head>
   <title>CS421 Database G11 Project "Class Booking Service"</title>
   <meta name="Author" content="Yangyang He">
+  <meta content="width=device-width,initial-scale=1" name=viewport>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/main.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
 <body>
   <div id="header">
@@ -57,7 +63,6 @@
           $getEventIdSql = "SELECT MAX(event_id)+1 FROM event;";
           $getEventIdresult = pg_query($getEventIdSql) or die('Query failed: ' . pg_last_error());
           $event_id = pg_fetch_array($getEventIdresult, null, PGSQL_NUM)[0];
-          echo $event_id;
 
           // SQL insert new reserver and new event
           $sql = "BEGIN;";
@@ -178,7 +183,7 @@
             echo "<br>";
             echo "Student " . $reserver;
             echo " has successfully booked " . $room;
-            echo " for " . $info;
+            echo " for " . $info . "(event no.: " .$event_id.")";
             echo " on " . $date . " " . $time;
             echo "<br>";
           }
