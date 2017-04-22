@@ -57,16 +57,12 @@
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
              or die('Could not connect:' . pg_last_error());
             $event_id = $_POST["event_id"];
-            echo $event_id;
             $verification = $_POST["verification"];
-            echo $verification;
 
             // Set event_id to max of existing event ids +1
             $getReserverIdSql = "SELECT reserver_id FROM event WHERE event_id=" .$event_id. ";";
             $getReserverIdresult = pg_query($getReserverIdSql) or die('Query failed: ' . pg_last_error());
             $reserver_id = pg_fetch_array($getReserverIdresult, null, PGSQL_NUM)[0];
-            echo "<br>";
-            echo $reserver_id;
 
             if (((int)$verification) == $reserver_id) {
               $sql = "BEGIN;";
@@ -74,7 +70,7 @@
               $sql .= "DELETE FROM event WHERE event_id=$event_id;";
               $sql .= "COMMIT;";
               $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-              echo "Booking No. " .$event_id. " is successfully canceled.";
+              echo "<h4>Booking No. " .$event_id. " has been successfully canceled.</h4>";
             } else {
               echo "<h4>Verification failed. You do not have to right to cancel this booking.</h4>";
             }
