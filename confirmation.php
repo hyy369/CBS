@@ -185,7 +185,7 @@
               echo "<h4 style='color: green;'>";
               echo "Student " . $reserver;
               echo " has successfully booked " . $room;
-              echo " for " . $info . " (event no.: " .$event_id.")";
+              echo " for " . $info . " (Event No." .$event_id.")";
               echo " on " . $date . " " . $time;
               echo "<h4>";
             }
