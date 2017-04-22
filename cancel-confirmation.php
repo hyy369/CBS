@@ -57,7 +57,7 @@
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
              or die('Could not connect:' . pg_last_error());
             $event_id = $_POST["event_id"];
-            $verification = $_POST["verificationInput"];
+            $verification = $_POST["verification"];
 
             // Set event_id to max of existing event ids +1
             $getReserverIdSql = "SELECT reserver_id FROM event WHERE event_id=" .$event_id. ";";
