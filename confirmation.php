@@ -50,144 +50,146 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <?php
-          // Connecting, selecting database
-          $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
-           or die('Could not connect:' . pg_last_error());
-          $timeList = $_POST["time_list"];
-          $info = $_POST["info"];
-          $room = $_POST["room"];
-          $reserver = $_POST["reserver_id"];
+        <div class="col-md-9">
+          <?php
+            // Connecting, selecting database
+            $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+             or die('Could not connect:' . pg_last_error());
+            $timeList = $_POST["time_list"];
+            $info = $_POST["info"];
+            $room = $_POST["room"];
+            $reserver = $_POST["reserver_id"];
 
-          // Set event_id to max of existing event ids +1
-          $getEventIdSql = "SELECT MAX(event_id)+1 FROM event;";
-          $getEventIdresult = pg_query($getEventIdSql) or die('Query failed: ' . pg_last_error());
-          $event_id = pg_fetch_array($getEventIdresult, null, PGSQL_NUM)[0];
+            // Set event_id to max of existing event ids +1
+            $getEventIdSql = "SELECT MAX(event_id)+1 FROM event;";
+            $getEventIdresult = pg_query($getEventIdSql) or die('Query failed: ' . pg_last_error());
+            $event_id = pg_fetch_array($getEventIdresult, null, PGSQL_NUM)[0];
 
-          // SQL insert new reserver and new event
-          $sql = "BEGIN;";
-          // Only insert reserver if not exist
-          $checkUserSql = "SELECT count(*) FROM reserver WHERE reserver_id=" .$reserver. ";";
-          $checkUserResult = pg_query($checkUserSql) or die('Query failed: ' . pg_last_error());
-          if (pg_fetch_array($checkUserResult, null, PGSQL_NUM)[0] == 0) {
-            $sql .= "INSERT INTO reserver VALUES(" . $reserver . ",3);";
-          }
-
-          $sql .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student','" . $info ."');" ;
-          $sql .= "COMMIT;";
-          $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-          foreach ($timeList as $selectedTime) {
-            switch (((int)$selectedTime) % 26) {
-              case 0:
-                $time = '08:00';
-                break;
-              case 1:
-                $time = '08:30';
-                break;
-              case 2:
-                $time = '09:00';
-                break;
-              case 3:
-                $time = '09:30';
-                break;
-              case 4:
-                $time = '10:00';
-                break;
-              case 5:
-                $time = '10:30';
-                break;
-              case 6:
-                $time = '11:00';
-                break;
-              case 7:
-                $time = '11:30';
-                break;
-              case 8:
-                $time = '12:00';
-                break;
-              case 9:
-                $time = '12:30';
-                break;
-              case 10:
-                $time = '13:00';
-                break;
-              case 11:
-                $time = '13:30';
-                break;
-              case 12:
-                $time = '14:00';
-                break;
-              case 13:
-                $time = '14:30';
-                break;
-              case 14:
-                $time = '15:00';
-                break;
-              case 15:
-                $time = '15:30';
-                break;
-              case 16:
-                $time = '16:00';
-                break;
-              case 17:
-                $time = '16:30';
-                break;
-              case 18:
-                $time = '17:00';
-                break;
-              case 19:
-                $time = '17:30';
-                break;
-              case 20:
-                $time = '18:00';
-                break;
-              case 21:
-                $time = '18:30';
-                break;
-              case 22:
-                $time = '19:00';
-                break;
-              case 23:
-                $time = '19:30';
-                break;
-              case 24:
-                $time = '20:00';
-                break;
-              case 25:
-                $time = '20:30';
-                break;
-            }
-            $d = 1;
-            switch ((int)((int)$selectedTime / 26)) {
-              case 0:
-                $date = '2017-04-17';
-                break;
-              case 1:
-                $date = '2017-04-18';
-                break;
-              case 2:
-                $date = '2017-04-19';
-                break;
-              case 3:
-                $date = '2017-04-20';
-                break;
-              case 4:
-                $date = '2017-04-21';
-                break;
-            }
+            // SQL insert new reserver and new event
             $sql = "BEGIN;";
-            $sql .= "UPDATE times SET event_id=" . $event_id . " ";
-            $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
+            // Only insert reserver if not exist
+            $checkUserSql = "SELECT count(*) FROM reserver WHERE reserver_id=" .$reserver. ";";
+            $checkUserResult = pg_query($checkUserSql) or die('Query failed: ' . pg_last_error());
+            if (pg_fetch_array($checkUserResult, null, PGSQL_NUM)[0] == 0) {
+              $sql .= "INSERT INTO reserver VALUES(" . $reserver . ",3);";
+            }
+
+            $sql .= "INSERT INTO event VALUES(" . $event_id . "," . $reserver . ",'student','" . $info ."');" ;
             $sql .= "COMMIT;";
             $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-            echo "<br>";
-            echo "Student " . $reserver;
-            echo " has successfully booked " . $room;
-            echo " for " . $info . "(event no.: " .$event_id.")";
-            echo " on " . $date . " " . $time;
-            echo "<br>";
-          }
-        ?>
+            foreach ($timeList as $selectedTime) {
+              switch (((int)$selectedTime) % 26) {
+                case 0:
+                  $time = '08:00';
+                  break;
+                case 1:
+                  $time = '08:30';
+                  break;
+                case 2:
+                  $time = '09:00';
+                  break;
+                case 3:
+                  $time = '09:30';
+                  break;
+                case 4:
+                  $time = '10:00';
+                  break;
+                case 5:
+                  $time = '10:30';
+                  break;
+                case 6:
+                  $time = '11:00';
+                  break;
+                case 7:
+                  $time = '11:30';
+                  break;
+                case 8:
+                  $time = '12:00';
+                  break;
+                case 9:
+                  $time = '12:30';
+                  break;
+                case 10:
+                  $time = '13:00';
+                  break;
+                case 11:
+                  $time = '13:30';
+                  break;
+                case 12:
+                  $time = '14:00';
+                  break;
+                case 13:
+                  $time = '14:30';
+                  break;
+                case 14:
+                  $time = '15:00';
+                  break;
+                case 15:
+                  $time = '15:30';
+                  break;
+                case 16:
+                  $time = '16:00';
+                  break;
+                case 17:
+                  $time = '16:30';
+                  break;
+                case 18:
+                  $time = '17:00';
+                  break;
+                case 19:
+                  $time = '17:30';
+                  break;
+                case 20:
+                  $time = '18:00';
+                  break;
+                case 21:
+                  $time = '18:30';
+                  break;
+                case 22:
+                  $time = '19:00';
+                  break;
+                case 23:
+                  $time = '19:30';
+                  break;
+                case 24:
+                  $time = '20:00';
+                  break;
+                case 25:
+                  $time = '20:30';
+                  break;
+              }
+              $d = 1;
+              switch ((int)((int)$selectedTime / 26)) {
+                case 0:
+                  $date = '2017-04-17';
+                  break;
+                case 1:
+                  $date = '2017-04-18';
+                  break;
+                case 2:
+                  $date = '2017-04-19';
+                  break;
+                case 3:
+                  $date = '2017-04-20';
+                  break;
+                case 4:
+                  $date = '2017-04-21';
+                  break;
+              }
+              $sql = "BEGIN;";
+              $sql .= "UPDATE times SET event_id=" . $event_id . " ";
+              $sql .= "WHERE room_id='" .$room. "' AND time='" .$time. "' AND date ='" .$date."';";
+              $sql .= "COMMIT;";
+              $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
+              echo "<br>";
+              echo "Student " . $reserver;
+              echo " has successfully booked " . $room;
+              echo " for " . $info . "(event no.: " .$event_id.")";
+              echo " on " . $date . " " . $time;
+              echo "<br>";
+            }
+          ?>
+        </div>
       </div>
 
     </div>

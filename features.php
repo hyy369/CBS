@@ -50,89 +50,93 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <p><strong>Please check the features you would like to have:</strong></p>
-        <form action ="features.php" method="post">
-          <input type="checkbox" name="projector" value="true">
-          <span>Projector</span>
-          <input type="checkbox" name="chalkboard" value="true">
-          <span>Chalkboard</span>
-          <input type="checkbox" name="whiteboard" value="true">
-          <span>Whiteboard</span>
-          <input type="checkbox" name="visualizer" value="true">
-          <span>Visualizer</span>
-          <br>
-          <span>Minimum number of outlets: </span>
-          <input type="number" name="min_outlets" min="0">
-          <br>
-          <span>Minimum capacity: </span>
-          <input type="number" name="min_cap" min="0">
-          <br>
-          <input type="submit" value="Search Rooms">
-          <input type ="reset">
-        </form>
+        <div class="col-md-9">
+          <p><strong>Please check the features you would like to have:</strong></p>
+          <form action ="features.php" method="post">
+            <input type="checkbox" name="projector" value="true">
+            <span>Projector</span>
+            <input type="checkbox" name="chalkboard" value="true">
+            <span>Chalkboard</span>
+            <input type="checkbox" name="whiteboard" value="true">
+            <span>Whiteboard</span>
+            <input type="checkbox" name="visualizer" value="true">
+            <span>Visualizer</span>
+            <br>
+            <span>Minimum number of outlets: </span>
+            <input type="number" name="min_outlets" min="0">
+            <br>
+            <span>Minimum capacity: </span>
+            <input type="number" name="min_cap" min="0">
+            <br>
+            <input type="submit" value="Search Rooms">
+            <input type ="reset">
+          </form>
+        </div>
       </div>
 
       <div class="row">
-        <table id="roomTable">
-          <tr>
-            <th>Room ID</th>
-            <th>Projector</th>
-            <th>Board</th>
-            <th>Visualizer</th>
-            <th>Outlets No.</th>
-            <th>Capacity</th>
-          </tr>
-          <?php
-            // Connecting, selecting database
-            $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
-              or die('Could not connect:' . pg_last_error());
-            $sql = "SELECT * FROM rooms WHERE ";
+        <div class="col-md-12">
+          <table id="roomTable">
+            <tr>
+              <th>Room ID</th>
+              <th>Projector</th>
+              <th>Board</th>
+              <th>Visualizer</th>
+              <th>Outlets No.</th>
+              <th>Capacity</th>
+            </tr>
+            <?php
+              // Connecting, selecting database
+              $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+                or die('Could not connect:' . pg_last_error());
+              $sql = "SELECT * FROM rooms WHERE ";
 
-            //filter projectors
-            if ($_POST["projector"] == "true") {
-              $sql .= "projector = 'YES'";
-            } else {
-              // prepare sql with "AND" for further filters
-              $sql .= "(projector = 'YES' OR projector = 'NO')";
-            }
-            //filter boards
-            if ($_POST["chalkboard"] == "true") {
-              if ($_POST["whiteboard"] == "true") {
-                $sql .= " AND whiteboard = 'BOTH'";
+              //filter projectors
+              if ($_POST["projector"] == "true") {
+                $sql .= "projector = 'YES'";
               } else {
-                $sql .= " AND whiteboard = 'CHALKBOARD'";
+                // prepare sql with "AND" for further filters
+                $sql .= "(projector = 'YES' OR projector = 'NO')";
               }
-            } else {
-              if ($_POST["whiteboard"] == "true") {
-                $sql .= " AND whiteboard = 'WHITEBOARD'";
+              //filter boards
+              if ($_POST["chalkboard"] == "true") {
+                if ($_POST["whiteboard"] == "true") {
+                  $sql .= " AND whiteboard = 'BOTH'";
+                } else {
+                  $sql .= " AND whiteboard = 'CHALKBOARD'";
+                }
+              } else {
+                if ($_POST["whiteboard"] == "true") {
+                  $sql .= " AND whiteboard = 'WHITEBOARD'";
+                }
               }
-            }
-            //filter visualizers
-            if ($_POST["visualizer"] == "true") {
-              $sql .= " AND visualizer = 'YES'";
-            }
-            //filter outlets
-            $min_outlets = (is_numeric($_POST["min_outlets"]) ? (int)$_POST["min_outlets"] : 0);
-            $sql .= " AND outlets >= ".$min_outlets;
-            //filter capacity
-            $min_cap = (is_numeric($_POST["min_cap"]) ? (int)$_POST["min_cap"] : 0);
-            $sql .= " AND capacity >= ".$min_cap;
-            $sql .= ";";
+              //filter visualizers
+              if ($_POST["visualizer"] == "true") {
+                $sql .= " AND visualizer = 'YES'";
+              }
+              //filter outlets
+              $min_outlets = (is_numeric($_POST["min_outlets"]) ? (int)$_POST["min_outlets"] : 0);
+              $sql .= " AND outlets >= ".$min_outlets;
+              //filter capacity
+              $min_cap = (is_numeric($_POST["min_cap"]) ? (int)$_POST["min_cap"] : 0);
+              $sql .= " AND capacity >= ".$min_cap;
+              $sql .= ";";
 
-            $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
+              $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
 
-            while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
-              echo "\t<tr>\n";
-              echo "\t\t<td><a href='booking.php?room=$line[0]'>$line[0]</a></td>\n";
-              echo "\t\t<td>$line[3]</td>\n";
-              echo "\t\t<td>$line[4]</td>\n";
-              echo "\t\t<td>$line[5]</td>\n";
-              echo "\t\t<td>$line[6]</td>\n";
-              echo "\t\t<td>$line[7]</td>\n";
-              echo "\t</tr>\n";
-            }
-          ?>
-        </table>
+              while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
+                echo "\t<tr>\n";
+                echo "\t\t<td><a href='booking.php?room=$line[0]'>$line[0]</a></td>\n";
+                echo "\t\t<td>$line[3]</td>\n";
+                echo "\t\t<td>$line[4]</td>\n";
+                echo "\t\t<td>$line[5]</td>\n";
+                echo "\t\t<td>$line[6]</td>\n";
+                echo "\t\t<td>$line[7]</td>\n";
+                echo "\t</tr>\n";
+              }
+            ?>
+          </table>
+        </div>
       </div>
     </div>
   </div>

@@ -50,93 +50,95 @@
   <div id="body">
     <div class="container">
       <div class="row">
-        <form action="confirmation.php" method="post">
-          <div class="row" style="overflow-x:auto;">
-            <table>
-              <tr>
-                <th>Time</th>
-                <th>08:00</th>
-                <th>08:30</th>
-                <th>09:00</th>
-                <th>09:30</th>
-                <th>10:00</th>
-                <th>10:30</th>
-                <th>11:00</th>
-                <th>11:30</th>
-                <th>12:00</th>
-                <th>12:30</th>
-                <th>13:00</th>
-                <th>13:30</th>
-                <th>14:00</th>
-                <th>14:30</th>
-                <th>15:00</th>
-                <th>15:30</th>
-                <th>16:00</th>
-                <th>16:30</th>
-                <th>17:00</th>
-                <th>17:30</th>
-                <th>18:00</th>
-                <th>18:30</th>
-                <th>19:00</th>
-                <th>19:30</th>
-                <th>20:00</th>
-                <th>20:30</th>
-              </tr>
-              <?php
-                // Connecting, selecting database
-                $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
-                 or die('Could not connect:' . pg_last_error());
-                $sql = "SELECT event_id FROM times WHERE room_id='";
-                $sql .= $_GET["room"];
-                $sql .= "' AND (date >= '2017-04-17' AND date <= '2017-04-21') ORDER BY date, time;";
-                $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
-                $count = 0;
-                $day = 1;
-                while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
-                  if ($count % 26 == 0) {
-                    switch ($day) {
-                      case 1:
-                        echo "\t<tr>\n\t\t<td>Monday</td>";
-                        break;
-                      case 2:
-                        echo "\t<tr>\n\t\t<td>Tuesday</td>";
-                        break;
-                      case 3:
-                        echo "\t<tr>\n\t\t<td>Wednesday</td>";
-                        break;
-                      case 4:
-                        echo "\t<tr>\n\t\t<td>Thursday</td>";
-                        break;
-                      case 5:
-                        echo "\t<tr>\n\t\t<td>Friday</td>";
-                        break;
+        <div class="col-md-12">
+          <form action="confirmation.php" method="post">
+            <div class="row" style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th>Time</th>
+                  <th>08:00</th>
+                  <th>08:30</th>
+                  <th>09:00</th>
+                  <th>09:30</th>
+                  <th>10:00</th>
+                  <th>10:30</th>
+                  <th>11:00</th>
+                  <th>11:30</th>
+                  <th>12:00</th>
+                  <th>12:30</th>
+                  <th>13:00</th>
+                  <th>13:30</th>
+                  <th>14:00</th>
+                  <th>14:30</th>
+                  <th>15:00</th>
+                  <th>15:30</th>
+                  <th>16:00</th>
+                  <th>16:30</th>
+                  <th>17:00</th>
+                  <th>17:30</th>
+                  <th>18:00</th>
+                  <th>18:30</th>
+                  <th>19:00</th>
+                  <th>19:30</th>
+                  <th>20:00</th>
+                  <th>20:30</th>
+                </tr>
+                <?php
+                  // Connecting, selecting database
+                  $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
+                   or die('Could not connect:' . pg_last_error());
+                  $sql = "SELECT event_id FROM times WHERE room_id='";
+                  $sql .= $_GET["room"];
+                  $sql .= "' AND (date >= '2017-04-17' AND date <= '2017-04-21') ORDER BY date, time;";
+                  $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
+                  $count = 0;
+                  $day = 1;
+                  while ($line = pg_fetch_array($result, null, PGSQL_NUM)) {
+                    if ($count % 26 == 0) {
+                      switch ($day) {
+                        case 1:
+                          echo "\t<tr>\n\t\t<td>Monday</td>";
+                          break;
+                        case 2:
+                          echo "\t<tr>\n\t\t<td>Tuesday</td>";
+                          break;
+                        case 3:
+                          echo "\t<tr>\n\t\t<td>Wednesday</td>";
+                          break;
+                        case 4:
+                          echo "\t<tr>\n\t\t<td>Thursday</td>";
+                          break;
+                        case 5:
+                          echo "\t<tr>\n\t\t<td>Friday</td>";
+                          break;
+                      }
+                      $day += 1;
                     }
-                    $day += 1;
+                    if ($line[0]) {
+                      echo "\t\t<td>$line[0]</td>\n";
+                    } else {
+                      echo "\t\t<td><input type='checkbox' name='time_list[]' value='$count'></td>";
+                    }
+                    $count += 1;
+                    if ($count % 26 == 0) {
+                      echo "\t</tr>\n";
+                    }
                   }
-                  if ($line[0]) {
-                    echo "\t\t<td>$line[0]</td>\n";
-                  } else {
-                    echo "\t\t<td><input type='checkbox' name='time_list[]' value='$count'></td>";
-                  }
-                  $count += 1;
-                  if ($count % 26 == 0) {
-                    echo "\t</tr>\n";
-                  }
-                }
-              ?>
-            </table>
-          </div>
-          <div class="row">
-            <input type="hidden" name="room" value="<?php echo htmlspecialchars($_GET['room']) ?>">
-            <span>Give your reservation a name (this will be public):* </span>
-            <input type="text" name="info">
-            <br>
-            <span>Your student ID number (930):* </span>
-            <input type="number" name="reserver_id" min="0">
-            <br>
-            <input type="submit" name="submit" value="Submit my booking request">
-          </div>
-        </form>
+                ?>
+              </table>
+            </div>
+            <div class="row">
+              <input type="hidden" name="room" value="<?php echo htmlspecialchars($_GET['room']) ?>">
+              <span>Give your reservation a name (this will be public):* </span>
+              <input type="text" name="info">
+              <br>
+              <span>Your student ID number (930):* </span>
+              <input type="number" name="reserver_id" min="0">
+              <br>
+              <input type="submit" name="submit" value="Submit my booking request">
+            </div>
+          </form>
+        </div>
       </div>
 
     </div>
