@@ -74,14 +74,10 @@
             <div class="row">
               <div class="col-md-4">
                 <span>Minimum number of outlets: </span>
-              </div>
-              <div class="col-md-4">
                 <input type="number" name="min_outlets" min="0">
               </div>
               <div class="col-md-4">
                 <span>Minimum capacity: </span>
-              </div>
-              <div class="col-md-4">
                 <input type="number" name="min_cap" min="0">
               </div>
             </div>
