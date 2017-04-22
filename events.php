@@ -74,7 +74,7 @@
               echo "\t\t<td>$line[3]</td>\n";
               echo "\t\t<td>$line[0]</td>\n";
               echo "\t\t<td>$line[2]</td>\n";
-              echo "\t\t<td><a href="">Cancel</a></td>\n";
+              echo "\t\t<td><a href=''>Cancel</a></td>\n";
               echo "\t</tr>\n";
             }
             ?>
