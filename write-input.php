@@ -2,7 +2,7 @@
 <html>
 <body>
 Submitted.
-<a href="hello.php" class="button">Return</a>
+<a href="schedule.php" class="button">Return</a>
 
 <?php
 	if ($_POST['building'] == "null"){
