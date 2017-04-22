@@ -128,9 +128,9 @@
                   }
                 ?>
               </table>
-              <h5><span style="color: rgb(34,177,76)">Green</span> = Free; <span style="color: rgb(223,0,60)">Red</span> = Busy.</h5>
             </div>
             <div class="row">
+              <h5><span style="color: rgb(34,177,76)">Green</span> = Free; <span style="color: rgb(223,0,60)">Red</span> = Busy.</h5>
               <input type="hidden" name="room" value="<?php echo htmlspecialchars($_GET['room']) ?>">
               <strong class="input-label">Give your reservation a name (this will be public):<span style="color: red;">*</span> </strong>
               <input type="text" name="info">
