@@ -52,7 +52,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h4><span style="text-color: red;">*</span>Please provide the reserver's student ID to cancel this booking:</h4>
+          <h4><span style="color: red;">*</span>Please provide the reserver's student ID to cancel this booking:</h4>
           <input type="number" id="verificationInput">
         </div>
       </div>
