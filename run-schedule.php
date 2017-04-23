@@ -54,12 +54,8 @@
 			<div class="row">
 				<div class="col-md-12" id="mid-form">
           <?php
-            if ($_POST['psw'] == '0000'){
-              echo "<h3>Administrator options</h3>\n";
-              echo "<h4><a href='run-schedule.php'>Run schedule script</a></h4>";
-            } else {
-              echo "<h4 style='color: red;'>Verification failed. You do not have access to this page.</h4>";
-            }
+            exec('python3 alg.py');
+            echo "<h4 style='color: green;'>Successfully scheduled classes!</h4>";
           ?>
 				</div>
 			</div>
