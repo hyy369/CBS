@@ -62,6 +62,7 @@
     </div>
     <div class="row">
       <div class="col-md-9">
+        <h4>To reserve a classroom, simply start by searching a room.</h4>
         <h3>Stage Documents</h3>
         <ul>
           <li><a href="assets/CBS_STAGE_1.pdf">Stage 1 (PDF)</a></li>
@@ -69,6 +70,14 @@
           <li><a href="assets/CBS_STAGE_3.pdf">Stage 3 (PDF)</a></li>
           <li><a href="assets/CBS_FINAL_PAPER.pdf">Final Paper (PDF)</a></li>
         </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <h3>General Description</h3>
+        <p>For our project, we wanted to create a classroom scheduler that is accessible through a web application that would allow students to reserve classrooms for their choice of use – such as for studying, or perhaps hosting a club event, or even simply watching a movie. For each available classroom, we’ve included a few notable attributes that would potentially help a user find a classroom to fit their needs. For example, if a student wanted to book a classroom to work on a large computer science project, one desired attribute of the room would be a large number of available outlets (since computer science students will probably want to work on laptops, and laptops need charging). Or, perhaps, if a student wanted to book a room in order to screen a movie, one requirement of the room would be the presence of a projector.</p>
+        <p>We’ve included the following properties as attributes of rooms so that rooms are filterable by these properties: the building of the room, the room number, the presence of a projector, the type of board in the classroom, whether or not there is a visualizer, the number of outlets in the room, and the capacity of the room. These are attributes that we feel would be most desirable to know when choosing a room for a given purpose. The building of a room would be a geographical indicator, such that if students were trying to meet for a project, they could choose a building that is best suited to everyone distance-wise. The projector and capacity of the room would be beneficial to know if a student were trying to reserve a room for a large meeting. The room number indicates the floor that a given classroom is on, so that if the students wanted to avoid walking up many flights of stairs, they could reserve a room on the basement or first floor.</p>
+        <p>We’ve also included attributes that we feel would be beneficial to professors, such as whether there is a visualizer in the room and what kind of board &#40;be it whiteboard, chalkboard, or both&#41; the classroom has. The primary reason for including these two attributes is because we wanted to open up the option of scheduling classrooms to professors as well, and professors will most often use a visualizer or the board for lecturing &#40;of course, students are free to specify their desire for a visualizer or a specific type of board as well—we just felt these properties would be less important to students&#41;. Specifically, we wanted to give professors the opportunity to request a classroom for a semester, given they have their designated class time. They would be able to request a room directly, by inputting a specific building and room number in conjunction with their class’s time slot, or by simply specifying their time slot and requesting a combination of their desired attributes, such as the minimum capacity of the room or that the board in the room be a chalkboard. The requests would then be run through a scheduler algorithm to satisfy as many requests as possible, with certain attributes being given more weight than others. Of course, the scheduling of classes would be handled prior to the start of the semester so that there would not be any conflicts with students reserving classrooms during designated class times. However, if a professor were to potentially cancel a class, s/he would have the option of cancelling that class’s reservation for a given day, opening up the time slot to students.</p>
       </div>
     </div>
   </div>

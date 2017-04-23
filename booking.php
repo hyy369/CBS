@@ -145,6 +145,7 @@
               </div>
             </div>
             <div clss="row">
+              <br>
               <input type="submit" name="submit" value="Submit my booking request">
             </div>
           </form>
