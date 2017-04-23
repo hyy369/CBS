@@ -127,7 +127,7 @@
 					 	<input type="submit" name="submit" value="Submit this class schedule">
 					 	<input type='reset' name='reset' value='Reset all field'>
 					</form>
-					<h6><a href="admin-login.php">Administrator login</a></h6>
+					<h6><a href="admin-login.html">Administrator login</a></h6>
 				</div>
 			</div>
 		</div>
