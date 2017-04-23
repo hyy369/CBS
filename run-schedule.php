@@ -52,9 +52,9 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12" id="mid-form">
+				<div class="col-md-12" id="middle">
           <?php
-            exec('python3 alg.py');
+            exec('python alg.py');
             echo "<h4 style='color: green;'>Successfully scheduled classes!</h4>";
           ?>
 				</div>
