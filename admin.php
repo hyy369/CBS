@@ -52,7 +52,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12" id="mid-form">
+				<div class="col-md-12" id="middle">
           <?php
             if ($_POST['psw'] == '0000'){
               echo "<h3>Administrator options</h3>\n";
