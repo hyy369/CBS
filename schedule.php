@@ -52,12 +52,15 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12" id="mid-form">
+				<div class="col-md-12">
 					<h3>Schedule a Class</h3>
 					<form action="write-input.php" method="post">
-						<strong class="input-label">CRN: </strong>
-						<input type="text" name="crn" required>
-						<br><br>
+						<div class="col-md-5" id="right-label">
+							<strong class="input-label">CRN: </strong>
+						</div>
+						<div class="col-md-7">
+							<input type="text" name="crn" required>
+						</div>
 						<strong class="input-label">DESIRED ROOM: </strong>
 				  	<select name="building" id='building'>
 				  		<option value="null">No Preference</option>
