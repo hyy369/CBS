@@ -254,7 +254,9 @@ for room_id, value in room_requests.items():
         crn = value[0][0]
         weekday = value[0][3]
         timeslot = create_timeslots(value[0][1], value[0][2])
+        print("Gets HEre!")
         unique_room_request(crn, room_id, timeslot, weekday, all_requests, fw)
+        print("hhhhh")
     else:
         mwf_list = []
         tth_list = []
@@ -388,6 +390,3 @@ for thing in all_requests:
     print(thing)
 print("ROOM_REQUESTS:")
 print(room_requests)
-
-    
-
