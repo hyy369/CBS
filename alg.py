@@ -10,7 +10,7 @@ fridays=['1-20','1-27','2-3','2-10','2-17','2-24','3-3','3-10','3-17','3-24','3-
 
 def request_from_db(request_str):
     try:
-        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay" )
+        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay", host='db.cs.wm.edu')
     except StandardError, e:
         print(str(e))
         exit
@@ -29,7 +29,7 @@ def request_from_db(request_str):
 
 def input_to_db(request_str):
     try:
-        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay" )
+        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay", host='db.cs.wm.edu')
     except StandardError, e:
         print(str(e))
         exit
@@ -95,7 +95,10 @@ def float_to_time(number):
     else:
         minute_str = "00"
 
-    hour_str = str(hour)
+    if (hour == 8 or hour == 9):
+        hour_str = "0" + str(hour)
+    else:
+        hour_str = str(hour)
 
     return hour_str + ":" + minute_str
 
@@ -383,8 +386,8 @@ fw.close()
 print("ALL REQUESTS:")
 for thing in all_requests:
     print(thing)
-#print("ROOM_REQUESTS:")
-#print(room_requests)
+print("ROOM_REQUESTS:")
+print(room_requests)
 
     
 
