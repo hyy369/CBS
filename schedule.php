@@ -53,10 +53,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12" id="mid-form">
+					<h3>Schedule a Class</h3>
 					<form action="write-input.php" method="post">
 						<strong class="input-label">CRN: </strong>
 						<input type="text" name="crn" required>
-						<br>
+						<br><br>
 						<strong class="input-label">DESIRED ROOM: </strong>
 				  	<select name="building" id='building'>
 				  		<option value="null">No Preference</option>
@@ -70,7 +71,7 @@
 				  			pg_close($dbcon);
 				  		?>
 					 	</select>
-						<br>
+						<br><br>
 					 	<strong class="input-label">Start Time: </strong>
 					 	<select name="start" id='start'>
 						 	<?php
@@ -83,46 +84,46 @@
 				  			pg_close($dbcon);
 				  		?>
             </select>
-						<br>
+						<br><br>
 					 	<strong class="input-label">Duration: </strong>
 					 	<select name="duration">
 					 		<option value='1'>1hr</option>
 					 		<option value='1.5'>1.5hrs</option>
 					 	</select>
-						<br>
+						<br><br>
 					 	<strong class="input-label">Days: </strong>
 					 	<select name="days">
 					 		<option value='MWF'>MWF</option>
 					 		<option value='TR'>TR</option>
 					 	</select>
-						<br>
+						<br><br>
 					 	<strong class="input-label">Capacity: </strong>
 					 	<input type='number' name='capacity' min='0' value='0'>
-						<br>
+						<br><br>
 					 	<strong class="input-label">Projector: </strong>
 					 	<select name="projector">
 					 		<option value='null'>No Preference</option>
 					 		<option value='0'>No</option>
 					 		<option value='1'>Yes</option>
 					 	</select>
-						<br>
+						<br><br>
 					 	<strong class="input-label">Visualizer: </strong>
 					 	<select name="visualizer">
 					 		<option value='null'>No Preference</option>
 					 		<option value='0'>No</option>
 					 		<option value='1'>Yes</option>
 					 	</select>
-						<br>
+						<br><br>
 					 	<strong class="input-label"> Board type: </strong>
 					 	<select name="board">
 					 		<option value='null'>No Preference</option>
 					 		<option value='Chalk'>Chalkboard</option>
 					 		<option value='White'>Whiteboard</option>
 					 	</select>
-						<br>
+						<br><br>
 					 	<strong class="input-label">Desired outlets: </strong>
 					 	<input type='number' name='outlets' min='0' value='0'>
-						<br>
+						<br><br>
 					 	<input type="submit" name="submit" value="Submit this class schedule">
 					 	<input type='reset' name='reset' value='Reset all field'>
 					</form>
