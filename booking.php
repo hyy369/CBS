@@ -137,12 +137,10 @@
             <div class="row">
               <div class="col-md-5">
                 <h5>Give your reservation a name (this will be public):<span style="color: red;">*</span> </h5>
-                <br>
                 <input type="text" name="info">
               </div>
               <div class="col-md-5">
                 <h5>Your student ID number (930):<span style="color: red;">*</span></h5>
-                <br>
                 <input type="number" name="reserver_id" min="0">
               </div>
             </div>

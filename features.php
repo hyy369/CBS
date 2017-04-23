@@ -57,29 +57,25 @@
           <form action ="features.php" method="post">
             <div class="row">
               <div class="col-md-2">
-                <input type="checkbox" name="projector" value="true">
-                <h5>Projector</h5>
+                <h5><input type="checkbox" name="projector" value="true">Projector</h5>
               </div>
               <div class="col-md-2">
-                <input type="checkbox" name="chalkboard" value="true">
-                <h5>Chalkboard</h5>
+                <h5><input type="checkbox" name="chalkboard" value="true">Chalkboard</h5>
               </div>
               <div class="col-md-2">
-                <input type="checkbox" name="whiteboard" value="true">
-                <h5>Whiteboard</h5>
+                <h5><input type="checkbox" name="whiteboard" value="true">Whiteboard</h5>
               </div>
               <div class="col-md-2">
-                <input type="checkbox" name="visualizer" value="true">
-                <h5>Visualizer</h5>
+                <h5><input type="checkbox" name="visualizer" value="true">Visualizer</h5>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <h5>Minimum number of outlets: </h5><br>
+                <h5>Minimum number of outlets: </h5>
                 <input type="number" name="min_outlets" min="0">
               </div>
               <div class="col-md-4">
-                <h5>Minimum capacity: </h5><br>
+                <h5>Minimum capacity: </h5>
                 <input type="number" name="min_cap" min="0">
               </div>
             </div>
