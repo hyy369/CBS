@@ -98,3 +98,7 @@ strong.input-label{
 #right-label {
 	text-align: right;
 }
+
+#left-field {
+	padding-left: 0px;
+}

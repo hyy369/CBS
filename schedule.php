@@ -54,21 +54,23 @@
 			<div class="row">
 				<div class="col-md-12" id="middle">
 					<h3>Schedule a Class</h3>
+					<p>Professors could submit their class schedules here before registration peiord.</p>
+					<p>The scheduler script will satisfy as many requests as possible.</p>
 				</div>
 				<form action="write-input.php" method="post">
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 							<h5>CRN: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 							<input type="text" name="crn" required>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 							<h5>Desired room: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 					  	<select name="building" id='building'>
 					  		<option value="null">No Preference</option>
 					  		<?php
@@ -84,10 +86,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5>Start Time: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<select name="start" id='start'>
 							 	<?php
 					  			$c = 8;
@@ -100,10 +102,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5>Duration: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<select name="duration">
 						 		<option value='1'>1hr</option>
 						 		<option value='1.5'>1.5hrs</option>
@@ -111,10 +113,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5>Days: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<select name="days">
 						 		<option value='MWF'>MWF</option>
 						 		<option value='TR'>TR</option>
@@ -122,18 +124,18 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5>Capacity: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<input type='number' name='capacity' min='0' value='0'>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5>Projector: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<select name="projector">
 						 		<option value='null'>No Preference</option>
 						 		<option value='0'>No</option>
@@ -142,10 +144,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5>Visualizer: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<select name="visualizer">
 						 		<option value='null'>No Preference</option>
 						 		<option value='0'>No</option>
@@ -154,10 +156,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5> Board type: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<select name="board">
 						 		<option value='null'>No Preference</option>
 						 		<option value='0'>Chalkboard</option>
@@ -166,10 +168,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6" id="right-label">
+						<div class="col-xs-6" id="right-label">
 						 	<h5>Desired outlets: </h5>
 						</div>
-						<div class="col-md-6">
+						<div class="col-xs-6" id="left-field">
 						 	<input type='number' name='outlets' min='0' value='0'>
 						</div>
 					</div>
