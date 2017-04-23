@@ -90,3 +90,7 @@ tr.header, tr:hover {
 strong.input-label{
 	font-size: 14px;
 }
+
+#mid-form {
+	text-align: center;
+}
