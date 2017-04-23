@@ -10,7 +10,7 @@ fridays=['1-20','1-27','2-3','2-10','2-17','2-24','3-3','3-10','3-17','3-24','3-
 
 def request_from_db(request_str):
     try:
-        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay", host='db.cs.wm.edu')
+        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay", host='db.cs.wm.edu', port='5432')
     except StandardError, e:
         print(str(e))
         exit
@@ -29,7 +29,7 @@ def request_from_db(request_str):
 
 def input_to_db(request_str):
     try:
-        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay", host='db.cs.wm.edu')
+        connection = psycopg2.connect( database = "swyao_CBS", user = "nswhay", password = "nswhay", host='db.cs.wm.edu', port='5432')
     except StandardError, e:
         print(str(e))
         exit
