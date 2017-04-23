@@ -94,3 +94,7 @@ strong.input-label{
 #mid-form {
 	text-align: center;
 }
+
+#right-label {
+	text-align: right;
+}
