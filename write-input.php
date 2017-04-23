@@ -53,7 +53,8 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12" id="middle">
+				<h3>Schedule a Class</h3>
 				<h4 style='color: green;'>Your request for course <?php echo $_POST["crn"]; ?> has been submitted.</h4>
 				<h5><a href="schedule.php">Return to previous page</a></h5>
 			</div>

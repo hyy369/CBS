@@ -57,16 +57,16 @@
           <form action ="features.php" method="post">
             <div class="row">
               <div class="col-md-2">
-                <h5><input type="checkbox" name="projector" value="true">Projector</h5>
+                <h5><input type="checkbox" name="projector" value="true"> Projector</h5>
               </div>
               <div class="col-md-2">
-                <h5><input type="checkbox" name="chalkboard" value="true">Chalkboard</h5>
+                <h5><input type="checkbox" name="chalkboard" value="true"> Chalkboard</h5>
               </div>
               <div class="col-md-2">
-                <h5><input type="checkbox" name="whiteboard" value="true">Whiteboard</h5>
+                <h5><input type="checkbox" name="whiteboard" value="true"> Whiteboard</h5>
               </div>
               <div class="col-md-2">
-                <h5><input type="checkbox" name="visualizer" value="true">Visualizer</h5>
+                <h5><input type="checkbox" name="visualizer" value="true"> Visualizer</h5>
               </div>
             </div>
             <div class="row">

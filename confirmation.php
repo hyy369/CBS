@@ -53,6 +53,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <h3>Booking Confirmation</h3>
           <?php
             // Connecting, selecting database
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")

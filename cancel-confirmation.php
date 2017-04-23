@@ -53,6 +53,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
+          <h3>Cancel Reservation</h3>
           <?php
             // Connecting, selecting database
             $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")

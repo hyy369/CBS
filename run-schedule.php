@@ -53,6 +53,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12" id="middle">
+					<h3>Run Scheduler Script</h3>
+					<p>The system returns the following:</p>
           <?php
             echo '<pre>';
             passthru('python alg.py');
