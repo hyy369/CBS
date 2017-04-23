@@ -84,6 +84,7 @@
               </div>
             </div>
             <div class="row">
+              <br>
               <div class="col-md-2">
                 <input type="submit" value="Search Rooms">
               </div>
