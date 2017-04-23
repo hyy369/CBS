@@ -56,79 +56,108 @@
 					<h3>Schedule a Class</h3>
 					<form action="write-input.php" method="post">
 						<div class="col-md-5" id="right-label">
-							<strong class="input-label">CRN: </strong>
+							<h5>CRN: </h5>
 						</div>
 						<div class="col-md-7">
 							<input type="text" name="crn" required>
 						</div>
-						<strong class="input-label">DESIRED ROOM: </strong>
-				  	<select name="building" id='building'>
-				  		<option value="null">No Preference</option>
-				  		<?php
-				  			$dbcon = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay");
-				  			$query = pg_query($dbcon, "select * from rooms;");
+						<div class="col-md-5" id="right-label">
+							<h5>Desired room: </h5>
+						</div>
+						<div class="col-md-7">
+					  	<select name="building" id='building'>
+					  		<option value="null">No Preference</option>
+					  		<?php
+					  			$dbcon = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay");
+					  			$query = pg_query($dbcon, "select * from rooms;");
 
-				  			while($row=pg_fetch_assoc($query)){
-				  				echo '<option value="'.htmlspecialchars($row['room_id']).'">'.htmlspecialchars($row['room_id']).'</option>';
-				  			}
-				  			pg_close($dbcon);
-				  		?>
-					 	</select>
-						<br><br>
-					 	<strong class="input-label">Start Time: </strong>
-					 	<select name="start" id='start'>
-						 	<?php
-				  			$dbcon = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay");
-				  			$query = pg_query($dbcon, "select distinct time from times order by time;");
+					  			while($row=pg_fetch_assoc($query)){
+					  				echo '<option value="'.htmlspecialchars($row['room_id']).'">'.htmlspecialchars($row['room_id']).'</option>';
+					  			}
+					  			pg_close($dbcon);
+					  		?>
+						 	</select>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<h5>Start Time: </h5>
+						</div>
+						<div class="col-md-7">
+						 	<select name="start" id='start'>
+							 	<?php
+					  			$dbcon = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay");
+					  			$query = pg_query($dbcon, "select distinct time from times order by time;");
 
-				  			while($row=pg_fetch_assoc($query)){
-				  				echo '<option value="'.htmlspecialchars($row['time']).'">'.htmlspecialchars($row['time']).'</option>';
-				  			}
-				  			pg_close($dbcon);
-				  		?>
-            </select>
-						<br><br>
-					 	<strong class="input-label">Duration: </strong>
-					 	<select name="duration">
-					 		<option value='1'>1hr</option>
-					 		<option value='1.5'>1.5hrs</option>
-					 	</select>
-						<br><br>
-					 	<strong class="input-label">Days: </strong>
-					 	<select name="days">
-					 		<option value='MWF'>MWF</option>
-					 		<option value='TR'>TR</option>
-					 	</select>
-						<br><br>
-					 	<strong class="input-label">Capacity: </strong>
-					 	<input type='number' name='capacity' min='0' value='0'>
-						<br><br>
-					 	<strong class="input-label">Projector: </strong>
-					 	<select name="projector">
-					 		<option value='null'>No Preference</option>
-					 		<option value='0'>No</option>
-					 		<option value='1'>Yes</option>
-					 	</select>
-						<br><br>
-					 	<strong class="input-label">Visualizer: </strong>
-					 	<select name="visualizer">
-					 		<option value='null'>No Preference</option>
-					 		<option value='0'>No</option>
-					 		<option value='1'>Yes</option>
-					 	</select>
-						<br><br>
-					 	<strong class="input-label"> Board type: </strong>
-					 	<select name="board">
-					 		<option value='null'>No Preference</option>
-					 		<option value='Chalk'>Chalkboard</option>
-					 		<option value='White'>Whiteboard</option>
-					 	</select>
-						<br><br>
-					 	<strong class="input-label">Desired outlets: </strong>
-					 	<input type='number' name='outlets' min='0' value='0'>
-						<br><br>
-					 	<input type="submit" name="submit" value="Submit this class schedule">
-					 	<input type='reset' name='reset' value='Reset all field'>
+					  			while($row=pg_fetch_assoc($query)){
+					  				echo '<option value="'.htmlspecialchars($row['time']).'">'.htmlspecialchars($row['time']).'</option>';
+					  			}
+					  			pg_close($dbcon);
+					  		?>
+	            </select>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<strong class="input-label">Duration: </strong>
+						</div>
+						<div class="col-md-7">
+						 	<select name="duration">
+						 		<option value='1'>1hr</option>
+						 		<option value='1.5'>1.5hrs</option>
+						 	</select>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<strong class="input-label">Days: </strong>
+						</div>
+						<div class="col-md-7">
+						 	<select name="days">
+						 		<option value='MWF'>MWF</option>
+						 		<option value='TR'>TR</option>
+						 	</select>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<strong class="input-label">Capacity: </strong>
+						</div>
+						<div class="col-md-7">
+						 	<input type='number' name='capacity' min='0' value='0'>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<strong class="input-label">Projector: </strong>
+						</div>
+						<div class="col-md-7">
+						 	<select name="projector">
+						 		<option value='null'>No Preference</option>
+						 		<option value='0'>No</option>
+						 		<option value='1'>Yes</option>
+						 	</select>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<strong class="input-label">Visualizer: </strong>
+						</div>
+						<div class="col-md-7">
+						 	<select name="visualizer">
+						 		<option value='null'>No Preference</option>
+						 		<option value='0'>No</option>
+						 		<option value='1'>Yes</option>
+						 	</select>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<strong class="input-label"> Board type: </strong>
+						</div>
+						<div class="col-md-7">
+						 	<select name="board">
+						 		<option value='null'>No Preference</option>
+						 		<option value='Chalk'>Chalkboard</option>
+						 		<option value='White'>Whiteboard</option>
+						 	</select>
+						</div>
+						<div class="col-md-5" id="right-label">
+						 	<strong class="input-label">Desired outlets: </strong>
+						</div>
+						<div class="col-md-7">
+						 	<input type='number' name='outlets' min='0' value='0'>
+						</div>
+						<div class="col-md-12" id="middle">
+						 	<input type="submit" name="submit" value="Submit this class schedule">
+						 	<input type='reset' name='reset' value='Reset all field'>
+						</div>
 					</form>
 					<h6><a href="admin-login.html">Administrator login</a></h6>
 				</div>
