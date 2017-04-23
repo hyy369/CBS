@@ -53,7 +53,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-          <p><strong>Please check the features you would like to have:</strong></p>
+          <h5><span style="color: red;">*</span>Please check the features you would like to have:</h5>
           <form action ="features.php" method="post">
             <div class="row">
               <div class="col-md-2">
@@ -74,13 +74,11 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-4">
                 <span>Minimum number of outlets: </span>
                 <input type="number" name="min_outlets" min="0">
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-4">
                 <span>Minimum capacity: </span>
                 <input type="number" name="min_cap" min="0">
               </div>

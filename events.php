@@ -53,7 +53,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h5>* Only student reservations is displayed here</h5>
+          <h5><span style="color: red;">*</span>Only student reservations is displayed here</h5>
           <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Type to search for event..">
           <table id="roomTable">
           <tr>
