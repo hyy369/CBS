@@ -51,7 +51,7 @@ def unique_room_request(crn, room, timeslots, weekday, req_list, write_file):
     for req in req_list:
         if crn == req[0]:
 
-            write_file.write(crn + " " + room + " " + str(timeslots) + "\n")
+            #write_file.write(crn + " " + room + " " + str(timeslots) + "\n")
             request = "insert into eventCopy values(" + crn + ", 0, 'class');"
 
             input_to_db(request)
@@ -247,16 +247,14 @@ for thing in all_requests:
 
 
 
-fw = open("output.txt", "w")
+fw = 0#open("output.txt", "w")
 for room_id, value in room_requests.items():
     # value = crn, start, duration, weekday
     if len(value) == 1:
         crn = value[0][0]
         weekday = value[0][3]
         timeslot = create_timeslots(value[0][1], value[0][2])
-        print("Gets HEre!")
         unique_room_request(crn, room_id, timeslot, weekday, all_requests, fw)
-        print("hhhhh")
     else:
         mwf_list = []
         tth_list = []
@@ -383,10 +381,13 @@ for req in all_requests:
         if found_placement_flag == 0:
             tups = []
 
-fw.close()
+#fw.close()
 
 print("ALL REQUESTS:")
 for thing in all_requests:
     print(thing)
 print("ROOM_REQUESTS:")
 print(room_requests)
+
+    
+

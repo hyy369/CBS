@@ -54,7 +54,9 @@
 			<div class="row">
 				<div class="col-md-12" id="middle">
           <?php
-            echo shell_exec('python alg.py');
+            echo '<pre>';
+            passthru('python alg.py');
+            echo '</pre>';
             echo "<h4 style='color: green;'>Successfully scheduled classes!</h4>";
           ?>
 				</div>
