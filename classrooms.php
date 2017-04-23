@@ -54,7 +54,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h3>Search by Building &amp; Room No.</h3>
+        <h3>Search by Building &amp; Room</h3>
         <input type="text" id="roomInput" onkeyup="searchRoom()" placeholder="Type to search for rooms..">
 
         <table id="roomTable">

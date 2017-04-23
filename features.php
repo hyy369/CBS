@@ -53,6 +53,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
+          <h3>Search by Features</h3>
           <h4><span style="color: red;">*</span>Please check the features you would like to have:</h4>
           <form action ="features.php" method="post">
             <div class="row">
