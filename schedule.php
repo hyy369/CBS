@@ -162,8 +162,8 @@
 						<div class="col-md-6">
 						 	<select name="board">
 						 		<option value='null'>No Preference</option>
-						 		<option value='Chalk'>Chalkboard</option>
-						 		<option value='White'>Whiteboard</option>
+						 		<option value='0'>Chalkboard</option>
+						 		<option value='1'>Whiteboard</option>
 						 	</select>
 						</div>
 					</div>
