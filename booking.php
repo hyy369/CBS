@@ -133,12 +133,20 @@
             <div class="row">
               <h5><span style="color: rgb(34,177,76)">Green</span> = Free; <span style="color: rgb(223,0,60)">Red</span> = Busy.</h5>
               <input type="hidden" name="room" value="<?php echo htmlspecialchars($_GET['room']) ?>">
-              <strong class="input-label">Give your reservation a name (this will be public):<span style="color: red;">*</span> </strong>
-              <input type="text" name="info">
-              <br>
-              <strong class="input-label">Your student ID number (930):<span style="color: red;">*</span> </strong>
-              <input type="number" name="reserver_id" min="0">
-              <br>
+            </div>
+            <div class="row">
+              <div class="col-md-5">
+                <h5>Give your reservation a name (this will be public):<span style="color: red;">*</span> </h5>
+                <br>
+                <input type="text" name="info">
+              </div>
+              <div class="col-md-5">
+                <h5>Your student ID number (930):<span style="color: red;">*</span></h5>
+                <br>
+                <input type="number" name="reserver_id" min="0">
+              </div>
+            </div>
+            <div clss="row">
               <input type="submit" name="submit" value="Submit my booking request">
             </div>
           </form>

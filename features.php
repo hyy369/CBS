@@ -53,33 +53,33 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-          <h5><span style="color: red;">*</span>Please check the features you would like to have:</h5>
+          <h4><span style="color: red;">*</span>Please check the features you would like to have:</h4>
           <form action ="features.php" method="post">
             <div class="row">
               <div class="col-md-2">
                 <input type="checkbox" name="projector" value="true">
-                <span>Projector</span>
+                <h5>Projector</h5>
               </div>
               <div class="col-md-2">
                 <input type="checkbox" name="chalkboard" value="true">
-                <span>Chalkboard</span>
+                <h5>Chalkboard</h5>
               </div>
               <div class="col-md-2">
                 <input type="checkbox" name="whiteboard" value="true">
-                <span>Whiteboard</span>
+                <h5>Whiteboard</h5>
               </div>
               <div class="col-md-2">
                 <input type="checkbox" name="visualizer" value="true">
-                <span>Visualizer</span>
+                <h5>Visualizer</h5>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <span>Minimum number of outlets: </span><br>
+                <h5>Minimum number of outlets: </h5><br>
                 <input type="number" name="min_outlets" min="0">
               </div>
               <div class="col-md-4">
-                <span>Minimum capacity: </span><br>
+                <h5>Minimum capacity: </h5><br>
                 <input type="number" name="min_cap" min="0">
               </div>
             </div>
