@@ -90,13 +90,11 @@
 						<div class="col-md-6">
 						 	<select name="start" id='start'>
 							 	<?php
-					  			$dbcon = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay");
-					  			$query = pg_query($dbcon, "select distinct time from times order by time;");
-
-					  			while($row=pg_fetch_assoc($query)){
-					  				echo '<option value="'.htmlspecialchars($row['time']).'">'.htmlspecialchars($row['time']).'</option>';
-					  			}
-					  			pg_close($dbcon);
+					  			$c = 8;
+									while ($c < 21) {
+										echo '<option value=' .$c. '>' .$c. '</option>';
+										$c = $c + .5;
+									}
 					  		?>
 	            </select>
 						</div>
