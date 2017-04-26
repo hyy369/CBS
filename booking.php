@@ -131,7 +131,7 @@
               </table>
             </div>
             <div class="row">
-              <h5><span style="color: rgb(34,177,76)">Green</span> = Free; <span style="color: rgb(223,0,60)">Red</span> = Busy.</h5>
+              <h5><span style="color: #22b14c">Green</span> = Free; <span style="color: #df003c">Red</span> = Busy.</h5>
               <input type="hidden" name="room" value="<?php echo htmlspecialchars($_GET['room']) ?>">
             </div>
             <div class="row">

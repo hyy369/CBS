@@ -62,7 +62,7 @@ tr.header, tr:hover {
 }
 
 #time-cell-free {
-	background-color:rgba(34,177,76,1);
+	background-color:#22b14c;
 }
 
 #time-cell-free:hover {
@@ -70,7 +70,7 @@ tr.header, tr:hover {
 }
 
 #time-cell-busy {
-	background-color:rgba(223,0,60,1);
+	background-color:#df003c;
 }
 
 #time-cell-busy:hover {
