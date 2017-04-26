@@ -62,8 +62,8 @@
 	</div>
 	<?php
 		if ($_POST['building'] == "null"){
-			$build = "null";
-			$room = "null";
+			$build = "NULL";
+			$room = "NULL";
 		}
 		else{
 			$b = explode(' ', $_POST['building']);

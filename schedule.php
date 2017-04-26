@@ -72,7 +72,7 @@
 						</div>
 						<div class="col-xs-6" id="left-field">
 					  	<select name="building" id='building'>
-					  		<option value="null">No Preference</option>
+					  		<option value="NULL">No Preference</option>
 					  		<?php
 					  			$dbcon = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay");
 					  			$query = pg_query($dbcon, "select * from rooms;");
@@ -137,7 +137,7 @@
 						</div>
 						<div class="col-xs-6" id="left-field">
 						 	<select name="projector">
-						 		<option value='null'>No Preference</option>
+						 		<option value='NULL'>No Preference</option>
 						 		<option value='0'>No</option>
 						 		<option value='1'>Yes</option>
 						 	</select>
@@ -149,7 +149,7 @@
 						</div>
 						<div class="col-xs-6" id="left-field">
 						 	<select name="visualizer">
-						 		<option value='null'>No Preference</option>
+						 		<option value='NULL'>No Preference</option>
 						 		<option value='0'>No</option>
 						 		<option value='1'>Yes</option>
 						 	</select>
@@ -161,7 +161,7 @@
 						</div>
 						<div class="col-xs-6" id="left-field">
 						 	<select name="board">
-						 		<option value='null'>No Preference</option>
+						 		<option value='NULL'>No Preference</option>
 						 		<option value='0'>Chalkboard</option>
 						 		<option value='1'>Whiteboard</option>
 						 	</select>
