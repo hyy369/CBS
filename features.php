@@ -123,11 +123,11 @@
                 if ($_POST["whiteboard"] == "true") {
                   $sql .= " AND whiteboard = 'BOTH'";
                 } else {
-                  $sql .= " AND whiteboard = 'CHALKBOARD'";
+                  $sql .= " AND (whiteboard = 'CHALKBOARD' OR whiteboard = 'BOTH')";
                 }
               } else {
                 if ($_POST["whiteboard"] == "true") {
-                  $sql .= " AND whiteboard = 'WHITEBOARD'";
+                  $sql .= " AND (whiteboard = 'WHITEBOARD' OR whiteboard = 'BOTH')";
                 }
               }
               //filter visualizers
