@@ -57,6 +57,7 @@
             if ($_POST['psw'] == '0000'){
               echo "<h3>Administrator options</h3>\n";
               echo "<h4><a href='run-schedule.php'>Run schedule script</a></h4>";
+							echo "<h4><a href='demo-classrooms.php'>See demo scheduler results</a></h4>";
             } else {
               echo "<h4 style='color: red;'>Verification failed. You do not have access to this page.</h4>";
             }

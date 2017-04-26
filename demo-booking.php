@@ -90,7 +90,7 @@
                   // Connecting, selecting database
                   $dbconn = pg_connect("host=db.cs.wm.edu dbname=swyao_CBS user=nswhay password=nswhay")
                    or die('Could not connect:' . pg_last_error());
-                  $sql = "SELECT event_id FROM times WHERE room_id='";
+                  $sql = "SELECT event_id FROM timescopy WHERE room_id='";
                   $sql .= $_GET["room"];
                   $sql .= "' AND (date >= '2017-04-24' AND date <= '2017-04-28') ORDER BY date, time;";
                   $result = pg_query($sql) or die('Query failed: ' . pg_last_error());
