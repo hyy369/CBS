@@ -164,19 +164,19 @@
               $d = 1;
               switch ((int)((int)$selectedTime / 26)) {
                 case 0:
-                  $date = '2017-04-17';
+                  $date = '2017-04-24';
                   break;
                 case 1:
-                  $date = '2017-04-18';
+                  $date = '2017-04-25';
                   break;
                 case 2:
-                  $date = '2017-04-19';
+                  $date = '2017-04-26';
                   break;
                 case 3:
-                  $date = '2017-04-20';
+                  $date = '2017-04-27';
                   break;
                 case 4:
-                  $date = '2017-04-21';
+                  $date = '2017-04-28';
                   break;
               }
               $sql = "BEGIN;";
