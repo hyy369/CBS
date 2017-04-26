@@ -109,7 +109,7 @@ div.jumbotron {
 	background-size: 100%;
 	background-position: 0px 0px;
 	height: 100%;
-	width: 100%;
+	width: auto;
 	padding-top: 20%;
 	padding-bottom: 20%;
 	color: white;
