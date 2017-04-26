@@ -342,7 +342,7 @@ for room_id, value in room_requests.items():
 for req in all_requests:
 
     query = make_query_string(req)
-    print("QUERY IS: " + query)
+    #print("QUERY IS: " + query)
     tups = request_from_db(query)
 
     found_placement_flag = 0
@@ -351,7 +351,7 @@ for req in all_requests:
 
         while (len(tups) == 0):
             req = decrement_restrictions(req)
-            print(req)
+            # print(req)
             query = make_query_string(req)
             tups = request_from_db(query)
 
@@ -383,11 +383,8 @@ for req in all_requests:
 
 #fw.close()
 
-print("ALL REQUESTS:")
-for thing in all_requests:
-    print(thing)
-print("ROOM_REQUESTS:")
-print(room_requests)
-
-    
-
+# print("ALL REQUESTS:")
+# for thing in all_requests:
+    # print(thing)
+# print("ROOM_REQUESTS:")
+# print(room_requests)
