@@ -1,3 +1,5 @@
+![alt text](https://github.com/hyy369/CBS/blob/master/assets/img/screenshot.png)
+
 # CBS
 A web interface and a database that can search for and reserve classrooms at William & Mary, browse room features, and automatically schedule events and classes. Built with PHP and PostgreSQL.
 
